@@ -127,10 +127,11 @@
       # Disable DPMS (screen auto turn-off)
       loginExtra = "xset -dpms";
       shellAliases = {
-        hmc = "nvim ~/.config/home-manager/home.nix";
-      	hms = "home-manager switch";
-      	nixbuild = "sudo nixos-rebuild switch";
-      	nixconf = "sudo nvim /etc/nixos/configuration.nix";
+        nx-build = "sudo nixos-rebuild switch --flake .#bulbasaur";
+        hm-build = "home-manager switch --flake .#rba@bulbasaur";
+        flake-edit = "$EDITOR ~/nixos-config/flake.nix";
+        nx-edit = "$EDITOR ~/nixos-config/nixos/configuration.nix";
+        hm-edit = "$EDITOR ~/nixos-config/home-manager/home.nix";
         qtc = "nvim ~/.config/qtile/config.py";
         g = "git";
       };
