@@ -73,7 +73,7 @@
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.j
+  # plain files is through 'home.file'.
   #home.file = {
   #  "nvim" = {
   #    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/.config/nvim";
