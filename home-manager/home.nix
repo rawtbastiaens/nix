@@ -19,6 +19,7 @@
   home.packages = with pkgs; [
     # System
     docker
+    gitkraken
 
     neofetch
     ranger
