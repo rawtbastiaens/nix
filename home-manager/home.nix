@@ -62,9 +62,7 @@
     zellij
     feh
     arandr
-
-    # dotfile mgmt
-    chezmoi
+    keepassxc
 
     # Editors
     vscodium
