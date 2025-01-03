@@ -20,6 +20,7 @@
     # System
     docker
     gitkraken
+    gimp
 
     neofetch
     ranger
