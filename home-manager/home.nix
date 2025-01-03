@@ -18,6 +18,7 @@
   # environment.
   home.packages = with pkgs; [
     arandr
+    binutils
     btop
     dmenu
     docker
