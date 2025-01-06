@@ -29,6 +29,7 @@
     ferdium
     file
     firefox
+    flameshot
     fzf
     gimp
     gitkraken
@@ -50,6 +51,7 @@
     ripgrep
     rofi
     strace
+    syncthing
     tree
     unzip
     usbutils
