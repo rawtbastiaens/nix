@@ -34,6 +34,7 @@
     gimp
     gitkraken
     glow
+    go
     htop
     i3lock-fancy
     iftop
@@ -47,6 +48,7 @@
     p7zip
     pavucontrol
     pciutils
+    python3
     ranger
     ripgrep
     rofi
