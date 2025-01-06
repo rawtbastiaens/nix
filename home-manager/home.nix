@@ -122,7 +122,7 @@
     };
     zsh = {
       enable = true;
-      enableCompletion = false;
+      enableCompletion = true;
 
       # Disable DPMS (screen auto turn-off)
       loginExtra = "xset -dpms";
