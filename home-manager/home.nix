@@ -102,7 +102,7 @@
   };
   
   programs = {
-    alacritty = {
+    kitty = {
       enable = true;
     };
     neovim = {
