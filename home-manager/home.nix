@@ -131,8 +131,8 @@
       enable = true;
       enableCompletion = true;
 
-      # Disable DPMS (screen auto turn-off)
-      loginExtra = "xset -dpms";
+      loginExtra = "autorandr -c";
+
       shellAliases = {
         nx-build = "sudo nixos-rebuild switch --flake .#bulbasaur";
         hm-build = "home-manager switch --flake .#rba@bulbasaur";
