@@ -150,22 +150,18 @@
     };
   };
 
-  services.picom.enable = true;
+  services.picom = {
+    enable = true;
+    settings = {
+      backend = "glx";
+      vsync = true;
+    };
+  };
   services.autorandr = {
   	enable = true;
   };
+
   xsession.initExtra = "${pkgs.autorandr}/bin/autorandr --change";
-
-  #environment.etc = {
-  #  "xdg/gtk-3.0/settings.ini".text = ''
-  #    [Settings]
-  #    gtk-application-prefer-dark-theme=1
-  #  '';
-  #};
-
-  dconf.settings = {
-    
-  };
 
   gtk.enable = true;
   gtk.gtk3.extraConfig = {
