@@ -18,8 +18,12 @@
   # environment.
   home.packages = with pkgs; [
     arandr
+    jq
+    autorandr
     binutils
+    brightnessctl
     btop
+    davmail
     dmenu
     docker
     dunst
@@ -45,6 +49,7 @@
     ltrace
     neofetch
     newsboat
+    nmap
     p7zip
     pavucontrol
     pciutils
@@ -54,6 +59,7 @@
     rofi
     strace
     syncthing
+    thunderbird
     tree
     unzip
     usbutils
@@ -63,6 +69,7 @@
     yq-go
     zellij
     zip
+    zsh-completions
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
