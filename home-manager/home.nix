@@ -17,8 +17,8 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    anonymousPro
     arandr
-    jq
     autorandr
     binutils
     brightnessctl
@@ -59,7 +59,6 @@
     rofi
     strace
     syncthing
-    thunderbird
     tree
     unzip
     usbutils
@@ -70,6 +69,7 @@
     zellij
     zip
     zsh-completions
+    pcmanfm
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
