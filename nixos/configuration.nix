@@ -99,14 +99,26 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services = {
+    # Enable the OpenSSH daemon.
+    openssh = {
+      enable = true;
+    };
+    blueman = {
+      enable = true;
+    };
+    udev = {
+      packages = with pkgs; [
+        autorandr
+      ];
+    };
+  };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  # networking.firewall.allowedTCPPorts = [ 22 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   system.stateVersion = "24.11"; # Did you read the comment?
 
@@ -119,12 +131,14 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable zsh
-  programs.zsh.enable = true;
+  programs = {
+    zsh = {
+      enable = true;
+    };
+  };
 
   security.sudo.wheelNeedsPassword = false;
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-
-  services.blueman.enable = true;
 }
