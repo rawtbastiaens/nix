@@ -104,6 +104,11 @@
   programs = {
     kitty = {
       enable = true;
+      extraConfig = ''
+        enable_audio_bell no
+        font_family Anonymous Pro
+        font_size 12.0
+      '';
     };
     neovim = {
       enable = true;
@@ -131,7 +136,12 @@
       enable = true;
       enableCompletion = true;
 
-      loginExtra = "autorandr -c";
+      loginExtra = ''
+        autorandr -c
+        xset -dpms
+        xset s off
+        xset s noblank
+      '';
 
       shellAliases = {
         nx-build = "sudo nixos-rebuild switch --flake .#bulbasaur";
@@ -140,6 +150,7 @@
         nx-edit = "$EDITOR ~/nixos-config/nixos/configuration.nix";
         hm-edit = "$EDITOR ~/nixos-config/home-manager/home.nix";
         qtc = "nvim ~/.config/qtile/config.py";
+        code = "codium";
         g = "git";
       };
       oh-my-zsh = {
