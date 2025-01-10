@@ -69,18 +69,24 @@
   nixpkgs.config.allowUnfree = true;
 
   nixpkgs.config.packageOverrides = pkgs: {
-    barracudavpn = pkgs.callPackage /home/rba/nixos-config/build/default.nix { };
+    barracudavpn = pkgs.callPackage /home/rba/nixos-config/build/barracudavpn/default.nix { };
+    gost = pkgs.callPackage /home/rba/nixos-config/build/gost/default.nix { };
   };
 
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    barracudavpn
+    catppuccin-sddm
+    gost
+    inetutils
+    jdk8
+    jre8
+    read-edid
     vim
     wget
-    catppuccin-sddm
     xorg.xev
-    inetutils
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
