@@ -1,0 +1,29 @@
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    iftop
+    iotop
+    htop
+    fzf
+    ethtool
+    binutils
+    btop
+    jq
+    file
+    lsof
+    nmap
+    ltrace
+    p7zip
+    pciutils
+    strace
+    ripgrep
+    tree
+    unzip
+    usbutils
+    vsce
+    which
+    xz
+    yq-go
+    zip
+    brightnessctl
+  ];
+}
