@@ -17,57 +17,8 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    anonymousPro
-    binutils
-    brightnessctl
-    btop
-    davmail
-    dmenu
-    docker
-    dunst
-    entr
-    ethtool
-    feh
-    ferdium
-    file
     firefox
-    flameshot
-    fzf
     gimp
-    gitkraken
-    glow
-    go
-    htop
-    i3lock-fancy
-    iftop
-    iotop
-    jq
-    keepassxc
-    lsof
-    ltrace
-    neofetch
-    newsboat
-    nmap
-    nodejs_22
-    p7zip
-    pciutils
-    python3
-    ranger
-    ripgrep
-    rofi
-    strace
-    tree
-    unzip
-    usbutils
-    vsce
-    vscodium
-    which
-    xz
-    yq-go
-    zellij
-    zip
-    zsh-completions
-    pcmanfm
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
