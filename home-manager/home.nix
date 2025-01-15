@@ -52,14 +52,12 @@
     nmap
     nodejs_22
     p7zip
-    pavucontrol
     pciutils
     python3
     ranger
     ripgrep
     rofi
     strace
-    spotify
     tree
     unzip
     usbutils
