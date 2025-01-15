@@ -1,11 +1,14 @@
 { config, pkgs, ... }:
 {
+  programs = {
+    neovim = {
+      enable = true;
+    };
+  };
   home.file = {
-    ".config/test" = {
-      text = ''
-        hello
-      '';
-      executable = false;
+    ".config/nvim" = {
+      source = ../../../../dotfiles/nvim;
+      recursive = true;
     };
   };
 }
