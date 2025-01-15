@@ -50,6 +50,7 @@
     neofetch
     newsboat
     nmap
+    nodejs_22
     p7zip
     pavucontrol
     pciutils
@@ -58,10 +59,11 @@
     ripgrep
     rofi
     strace
-    syncthing
+    spotify
     tree
     unzip
     usbutils
+    vsce
     vscodium
     which
     xz
@@ -102,14 +104,6 @@
   };
   
   programs = {
-    kitty = {
-      enable = true;
-      extraConfig = ''
-        enable_audio_bell no
-        font_family Anonymous Pro
-        font_size 12.0
-      '';
-    };
     neovim = {
       enable = true;
       extraConfig = ''
@@ -161,15 +155,27 @@
     };
   };
 
-  services.picom = {
-    enable = true;
-    settings = {
-      backend = "glx";
-      vsync = true;
+  services = {
+    picom = {
+      enable = true;
+        settings = {
+          backend = "glx";
+          vsync = true;
+        };
     };
-  };
-  services.autorandr = {
-  	enable = true;
+    autorandr = {
+      enable = true;
+    };
+    syncthing = {
+      enable = true;
+      extraOptions = [
+        "--user=rba"
+        "--password=culture-spendable-sprung-radiance-scenic-alphabet"
+      ];
+      tray = {
+        enable = true;
+      };
+    };
   };
 
   xsession.initExtra = "${pkgs.autorandr}/bin/autorandr --change";

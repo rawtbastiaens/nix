@@ -1,5 +1,5 @@
 {
-  description = "Your new nix config";
+  description = "Rik's NixOS config";
 
   inputs = {
     # Nixpkgs
@@ -19,9 +19,13 @@
     inherit (self) outputs;
   in {
     nixosConfigurations = {
+      # Work laptop
       bulbasaur = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        # modules = [./hosts/bulbasaur];
         modules = [./nixos/configuration.nix];
+        specialArgs = {
+          inherit inputs outputs;
+        };
       };
     };
 
@@ -29,7 +33,7 @@
       "rba@bulbasaur" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home-manager/home.nix];
+        modules = [./home-manager/home.nix ./home/rba/bulbasaur.nix];
       };
     };
   };
