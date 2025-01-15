@@ -116,8 +116,8 @@
     syncthing = {
       enable = true;
       extraOptions = [
-        "--user=rba"
-        "--password=culture-spendable-sprung-radiance-scenic-alphabet"
+        # "--gui-user=rba"
+        #"--gui-password=culture-spendable-sprung-radiance-scenic-alphabet"
       ];
       tray = {
         enable = true;
