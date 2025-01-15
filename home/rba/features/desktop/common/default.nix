@@ -7,5 +7,6 @@
     ./kitty.nix
     ./pavucontrol.nix
     ./discord.nix
+    ./vscodium.nix
   ];
 }
