@@ -4,6 +4,7 @@
 }: {
   imports = [
     ./features/desktop/common
+    ./features/cli
   ];
 
   # Purple

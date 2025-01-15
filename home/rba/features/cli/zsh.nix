@@ -3,6 +3,7 @@
   lib,
   ...
 }: {
+  programs = {
     zsh = {
       enable = true;
       enableCompletion = true;
@@ -30,4 +31,5 @@
         theme = "robbyrussell";
       };
     };
+  };
 }

@@ -3,6 +3,7 @@
   lib,
   ...
 }: {
+  programs = {
     git = {
       enable = true;
       userName = "Rik Bastiaens";
@@ -16,4 +17,5 @@
         f = "fetch";
       };
     };
+  };
 }
