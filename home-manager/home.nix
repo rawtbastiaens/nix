@@ -18,8 +18,6 @@
   # environment.
   home.packages = with pkgs; [
     anonymousPro
-    arandr
-    autorandr
     binutils
     brightnessctl
     btop
@@ -110,9 +108,6 @@
           vsync = true;
         };
     };
-    autorandr = {
-      enable = true;
-    };
     syncthing = {
       enable = true;
       extraOptions = [
@@ -125,7 +120,6 @@
     };
   };
 
-  xsession.initExtra = "${pkgs.autorandr}/bin/autorandr --change";
 
   gtk.enable = true;
   gtk.gtk3.extraConfig = {

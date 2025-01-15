@@ -6,7 +6,7 @@
 }: {
   home.file = {
     ".config/qtile" = {
-      source = ../../../../dotfiles/qtile;
+      source = ../../../../../dotfiles/qtile;
       recursive = true;
     };
   };

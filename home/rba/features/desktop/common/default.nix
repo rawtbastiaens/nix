@@ -8,5 +8,6 @@
     ./pavucontrol.nix
     ./discord.nix
     ./vscodium.nix
+    ./randr.nix
   ];
 }
