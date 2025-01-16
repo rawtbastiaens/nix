@@ -18,9 +18,19 @@
     dmenu
   ];
   home.file = {
-    ".config/qtile" = {
-      source = ../../../../../dotfiles/qtile;
+    ".config/qtile/scripts" = {
+      source = ../../../../../dotfiles/qtile/scripts;
       recursive = true;
+    };
+    ".config/qtile/wallpapers" = {
+      source = ../../../../../dotfiles/qtile/wallpapers;
+      recursive = true;
+    };
+    ".config/qtile/config.py" = {
+      source = ../../../../../dotfiles/qtile/config.py;
+    };
+    ".config/qtile/autostart.sh" = {
+      source = ../../../../../dotfiles/qtile/autostart.sh;
     };
   };
 
