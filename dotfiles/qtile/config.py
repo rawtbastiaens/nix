@@ -112,7 +112,7 @@ groups = [
     Group("4"),
     Group("5"),
     Group("6"),
-    Group("7"),
+    Group("7", matches=[Match(wm_class=["keepassxc"])]),
     Group("8", matches=[Match(wm_class=["gitkraken"])]),
     Group("9", matches=[Match(wm_class=["ferdium"])]),
 ];
