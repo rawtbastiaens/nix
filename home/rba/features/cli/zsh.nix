@@ -8,13 +8,6 @@
       enable = true;
       enableCompletion = true;
 
-      loginExtra = ''
-        autorandr -c
-        xset -dpms
-        xset s off
-        xset s noblank
-      '';
-
       shellAliases = {
         nx-build = "sudo nixos-rebuild switch --flake .#bulbasaur";
         hm-build = "home-manager switch --flake .#rba@bulbasaur";
