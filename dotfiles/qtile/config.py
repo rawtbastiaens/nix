@@ -83,6 +83,7 @@ keys = [
 
     # Custom keybinds
     Key([mod], "p", lazy.spawn("rofi -show combi"), desc="rofi"),
+    Key([mod, "shift"], "p", lazy.spawn("pavucontrol"), desc="pavucontrol hotkey"),
     Key([mod], "e", lazy.spawn("pcmanfm"), desc="filemanager"),
     Key([mod], "Escape", lazy.spawn("i3lock-fancy"), desc="i3lock"),
     Key([], "XF86MonBrightnessDown", lazy.spawn(os.getenv("HOME") + "/.config/qtile/scripts/brightness.sh down"), desc="Lower screen brightness"),
