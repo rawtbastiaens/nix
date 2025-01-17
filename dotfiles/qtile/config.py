@@ -84,6 +84,7 @@ keys = [
     # Custom keybinds
     Key([mod], "p", lazy.spawn("rofi -show combi"), desc="rofi"),
     Key([mod, "shift"], "p", lazy.spawn("pavucontrol"), desc="pavucontrol hotkey"),
+    Key([mod, "shift"], "a", lazy.spawn("autorandr -c"), desc="Trigger autorandr"),
     Key([mod], "e", lazy.spawn("pcmanfm"), desc="filemanager"),
     Key([mod], "Escape", lazy.spawn("i3lock-fancy"), desc="i3lock"),
     Key([], "XF86MonBrightnessDown", lazy.spawn(os.getenv("HOME") + "/.config/qtile/scripts/brightness.sh down"), desc="Lower screen brightness"),
@@ -281,6 +282,7 @@ floating_layout = layout.Floating(
         Match(wm_class="pcmanfm"),
         Match(wm_class="keepassxc"),
         Match(wm_class="pavucontrol"),
+        Match(wm_class="org.remmina.Remmina"),
     ]
 )
 auto_fullscreen = True
