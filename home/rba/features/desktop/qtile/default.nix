@@ -7,7 +7,6 @@
   home.packages = with pkgs; [
     ranger
     dunst
-    rofi
     feh
     flameshot
     i3lock-fancy
@@ -17,6 +16,17 @@
     pcmanfm
     dmenu
   ];
+
+  programs.rofi = {
+    enable = true;
+    font = "Noto Sans 12";
+    terminal = "\${pkgs.kitty}/bin/kitty";
+    extraConfig = {
+      modi = "drun,run,window,ssh";
+    };
+    theme = "Arc-Dark";
+  };
+
   home.file = {
     ".config/qtile/scripts" = {
       source = ../../../../../dotfiles/qtile/scripts;
