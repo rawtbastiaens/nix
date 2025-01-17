@@ -13,5 +13,6 @@
     vscodium
     zsh-completions
     remmina
+    input-leap
   ];
 }
