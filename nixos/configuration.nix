@@ -86,6 +86,7 @@
     read-edid
     vim
     wget
+    gcc
     xorg.xev
   ];
 

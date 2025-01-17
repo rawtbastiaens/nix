@@ -11,5 +11,6 @@
     ./vscodium.nix
     ./randr.nix
     ./productivity.nix
+    ./screenkey.nix
   ];
 }

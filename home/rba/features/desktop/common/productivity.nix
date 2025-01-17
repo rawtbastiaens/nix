@@ -12,5 +12,6 @@
     go
     vscodium
     zsh-completions
+    remmina
   ];
 }
