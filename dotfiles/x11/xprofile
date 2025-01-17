@@ -1,0 +1,4 @@
+autorandr -c
+xset -dpms
+xset s off
+xset s noblank
