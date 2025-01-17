@@ -22,7 +22,7 @@
       # Work laptop
       bulbasaur = nixpkgs.lib.nixosSystem {
         # modules = [./hosts/bulbasaur];
-        modules = [./nixos/configuration.nix];
+        modules = [./hosts/bulbasaur];
         specialArgs = {
           inherit inputs outputs;
         };

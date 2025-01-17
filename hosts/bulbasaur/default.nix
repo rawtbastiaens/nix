@@ -43,20 +43,31 @@
   };
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+  services = {
+    displayManager = {
+      sddm = {
+        enable = true;
+        theme = "catppuccin-macchiato";
+        package = pkgs.kdePackages.sddm;
+      };
+    };
+    xserver = {
+      enable = true;
+
+      windowManager = {
+        qtile = {
+          enable = true;
+        };
+      };
+
+
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
+    };
   };
 
-  services.xserver.enable = true;
-  services.xserver.windowManager.qtile.enable = true;
-  services.displayManager.sddm = {
-    enable = true;
-    theme = "catppuccin-macchiato";
-    package = pkgs.kdePackages.sddm;
-  };
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.rba = {
     isNormalUser = true;
     description = "Rik Bastiaens";
@@ -78,7 +89,11 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     barracudavpn
-    catppuccin-sddm
+    (catppuccin-sddm.override {
+      flavor = "macchiato";
+      font = "Noto Sans";
+      fontSize = "12";
+    })
     gost
     inetutils
     jdk8
@@ -86,7 +101,10 @@
     read-edid
     vim
     wget
+    gcc
     xorg.xev
+    noto-fonts
+    font-awesome
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
