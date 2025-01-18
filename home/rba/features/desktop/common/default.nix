@@ -15,5 +15,6 @@
     ./firefox.nix
     ./gtk.nix
     ./syncthing.nix
+    ./gollum.nix
   ];
 }
