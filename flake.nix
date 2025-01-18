@@ -21,8 +21,14 @@
     nixosConfigurations = {
       # Work laptop
       bulbasaur = nixpkgs.lib.nixosSystem {
-        # modules = [./hosts/bulbasaur];
         modules = [./hosts/bulbasaur];
+        specialArgs = {
+          inherit inputs outputs;
+        };
+      };
+      # Private laptop
+      crobat = nixpkgs.lib.nixosSystem {
+        modules = [./hosts/crobat];
         specialArgs = {
           inherit inputs outputs;
         };
@@ -34,6 +40,11 @@
         pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home-manager/home.nix ./home/rba/bulbasaur.nix];
+      };
+      "rba@crobat" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [./home/rba/crobat.nix];
       };
     };
   };
