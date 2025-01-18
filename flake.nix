@@ -39,7 +39,7 @@
       "rba@bulbasaur" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home-manager/home.nix ./home/rba/bulbasaur.nix];
+        modules = [./home/rba/bulbasaur.nix];
       };
       "rba@crobat" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };

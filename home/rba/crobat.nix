@@ -16,4 +16,21 @@
     ./features/desktop/qtile
     ./features/cli
   ];
+
+  home.file = {
+    ".config/qtile/scripts" = {
+      source = ../../dotfiles/qtile/crobat/scripts;
+      recursive = true;
+    };
+    ".config/qtile/wallpapers" = {
+      source = ../../dotfiles/qtile/crobat/wallpapers;
+      recursive = true;
+    };
+    ".config/qtile/config.py" = {
+      source = ../../dotfiles/qtile/crobat/config.py;
+    };
+    ".config/qtile/autostart.sh" = {
+      source = ../../dotfiles/qtile/crobat/autostart.sh;
+    };
+  };
 }
