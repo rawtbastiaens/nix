@@ -9,5 +9,7 @@
     ./zsh.nix
     ./nvim.nix
     ./utils.nix
+    ./home-manager.nix
+    ./env.nix
   ];
 }

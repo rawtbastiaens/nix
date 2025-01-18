@@ -12,5 +12,8 @@
     ./randr.nix
     ./productivity.nix
     ./screenkey.nix
+    ./firefox.nix
+    ./gtk.nix
+    ./syncthing.nix
   ];
 }

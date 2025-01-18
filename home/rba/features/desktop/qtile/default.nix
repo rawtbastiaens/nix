@@ -27,22 +27,16 @@
     theme = "Arc-Dark";
   };
 
-  home.file = {
-    ".config/qtile/scripts" = {
-      source = ../../../../../dotfiles/qtile/scripts;
-      recursive = true;
-    };
-    ".config/qtile/wallpapers" = {
-      source = ../../../../../dotfiles/qtile/wallpapers;
-      recursive = true;
-    };
-    ".config/qtile/config.py" = {
-      source = ../../../../../dotfiles/qtile/config.py;
-    };
-    ".config/qtile/autostart.sh" = {
-      source = ../../../../../dotfiles/qtile/autostart.sh;
+  services = {
+    picom = {
+      enable = true;
+        settings = {
+          backend = "glx";
+          vsync = true;
+        };
     };
   };
+
 
   imports = [
     ./fonts.nix
