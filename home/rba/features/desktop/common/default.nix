@@ -15,6 +15,7 @@
     ./firefox.nix
     ./gtk.nix
     ./syncthing.nix
+    #./gimp.nix
     # ./gollum.nix
   ];
 }
