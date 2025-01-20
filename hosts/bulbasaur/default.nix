@@ -165,6 +165,16 @@
 
   security.sudo.wheelNeedsPassword = false;
 
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+      General = {
+          ControllerMode = "dual";
+      };
+      Policy = {
+        AutoEnable = true;
+      };
+    };
+  };
   hardware.bluetooth.powerOnBoot = true;
 }
