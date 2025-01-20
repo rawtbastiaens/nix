@@ -14,5 +14,6 @@
     zsh-completions
     remmina
     input-leap
+    markdownlint-cli
   ];
 }
