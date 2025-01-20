@@ -12,6 +12,7 @@
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 5;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "bulbasaur"; # Define your hostname.
@@ -147,6 +148,13 @@
 
   # RB: Enable support for flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Nix garbage collection settings
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
 
   # Enable zsh
   programs = {
