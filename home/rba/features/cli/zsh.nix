@@ -7,6 +7,9 @@
     zsh = {
       enable = true;
       enableCompletion = true;
+      initExtra = ''
+        bindkey -s "^o" "ranger\n"
+      '';
 
       shellAliases = {
         nx-build = "sudo nixos-rebuild switch --flake .#bulbasaur";
