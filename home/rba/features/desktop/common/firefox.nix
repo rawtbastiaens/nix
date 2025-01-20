@@ -21,9 +21,6 @@
       };
       bookmarks = [
         {
-          "https://search.nixos.org/packages?channel=24.11&from=0&size=50&sort=relevance&type=packages&query=%s"
-        }
-        {
           name = "Nix sites";
           toolbar = true;
           bookmarks = [

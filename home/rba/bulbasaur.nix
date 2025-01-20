@@ -13,7 +13,7 @@
 
   home.file = {
     ".config/qtile/scripts" = {
-      source = ../../dotfiles/qtile/scripts;
+      source = ../../dotfiles/qtile/bulbasaur/scripts;
       recursive = true;
     };
     ".config/qtile/wallpapers" = {
