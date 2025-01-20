@@ -6,6 +6,18 @@
   programs.firefox = {
     enable = true;
     profiles.rik = {
+      containers = {
+        work = {
+          color = "red";
+          icon = "briefcase";
+          id = 1;
+        };
+        private = {
+          color = "blue";
+          icon = "chill";
+          id = 2;
+        };
+      };
       search = {
         force = true;
         default = "DuckDuckGo";
@@ -37,13 +49,20 @@
               tags = [ "wiki" "nix" ];
               url = "https://wiki.nixos.org/";
             }
+            {
+              name = "NixOS NUR";
+              tags = ["nix"];
+              url = "https://nur.nix-community.org/";
+            }
           ];
         }
       ];
         
-      #extensions = with pkgs.inputs.firefox-addons; [
-      #  ublock-origin
-      #];
+      extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+        ublock-origin
+        multi-account-containers
+      ];
+
       settings = {
         "browser.startup.homepage" = "about:home";
 
