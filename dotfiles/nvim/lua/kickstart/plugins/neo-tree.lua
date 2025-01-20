@@ -38,5 +38,11 @@ return {
         },
       },
     },
+    window = {
+      mappings = {
+        ["l"] = "open",
+        ["h"] = "close_node",
+      },
+    },
   },
 }
