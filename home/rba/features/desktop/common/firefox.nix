@@ -1,18 +1,19 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   programs.firefox = {
     enable = true;
     profiles.rik = {
       containers = {
-        work = {
+        Work = {
           color = "red";
           icon = "briefcase";
           id = 1;
         };
-        private = {
+        Private = {
           color = "blue";
           icon = "chill";
           id = 2;
@@ -24,9 +25,50 @@
         privateDefault = "DuckDuckGo";
         order = ["DuckDuckGo" "Google"];
         engines = {
-          "NixOS pkgs" = {
-              urls = [{template = "https://search.nixos.org/packages?query={searchTerms}";}];
-              iconUpdateURL = "https://search.nixos.org/favicon.ico";
+          "Nix Packages" = {
+            urls = [{
+              template = "https://search.nixos.org/packages";
+              params = [
+                { name = "type"; value = "packages"; }
+                { name = "query"; value = "{searchTerms}"; }
+              ];
+            }];
+
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = [ "@np" ];
+          };
+          "Jira title search" = {
+            urls = [{
+              template = "https://qnh-hawaii.atlassian.net/issues/";
+              params = [
+                { name = "jql"; value = "summary ~ \"{searchTerms}\*\""; }
+              ];
+            }];
+            definedAliases = [ "@j" ];
+          };
+          "Home Manager Options (stable)" = {
+            urls = [{
+              template = "https://home-manager-options.extranix.com";
+              params = [
+                { name = "release"; value = "release-24.11"; }
+                { name = "query"; value = "{searchTerms}"; }
+              ];
+            }];
+
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = [ "@hm" ];
+          };
+          "Home Manager Options (unstable)" = {
+            urls = [{
+              template = "https://home-manager-options.extranix.com";
+              params = [
+                { name = "release"; value = "master"; }
+                { name = "query"; value = "{searchTerms}"; }
+              ];
+            }];
+
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = [ "@hmu" ];
           };
           "Bing".metaData.hidden = true;
         };
@@ -37,14 +79,6 @@
           toolbar = true;
           bookmarks = [
             {
-              name = "NixOS package search";
-              url = "https://search.nixos.org/";
-            }
-            {
-              name = "Home manager options";
-              url = "https://home-manager-options.extranix.com/?query=&release=release-24.11";
-            }
-            {
               name = "NixOS wiki";
               tags = [ "wiki" "nix" ];
               url = "https://wiki.nixos.org/";
@@ -53,6 +87,29 @@
               name = "NixOS NUR";
               tags = ["nix"];
               url = "https://nur.nix-community.org/";
+            }
+            {
+              name = "ilionx AFAS";
+              tags = ["work"];
+              keyword = "afas";
+              url = "https://89311.afasinsite.nl";
+            }
+            {
+              name = "ilionx Jira";
+              tags = ["work"];
+              keyword = "jira";
+              url = "https://qnh-hawaii.atlassian.net/jira/your-work";
+            }
+            {
+              name = "ilionx Confluence";
+              tags = ["work"];
+              keyword = "wiki";
+              url = "https://qnh-hawaii.atlassian.net/wiki/home";
+            }
+            {
+              name = "Qtile docs";
+              keyword = "qt";
+              url = "https://docs.qtile.org/en/stable/";
             }
           ];
         }
