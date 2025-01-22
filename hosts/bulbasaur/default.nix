@@ -13,6 +13,7 @@
       ../common/docker.nix
       ../common/libvirtd.nix
       ../common/monitoring.nix
+      ../common/languages.nix
     ];
 
   # Bootloader.
