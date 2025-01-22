@@ -8,6 +8,11 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../common/default.nix
+      ../common/bluetooth.nix
+      ../common/docker.nix
+      ../common/libvirtd.nix
+      ../common/monitoring.nix
     ];
 
   # Bootloader.
@@ -18,35 +23,11 @@
   networking.hostName = "bulbasaur"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
   networking.networkmanager.enable = true;
   networking.hosts = {
     "127.0.0.1" = ["prom.local" "grafana.local"];
   };
 
-  # Set your time zone.
-  time.timeZone = "Europe/Amsterdam";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "nl_NL.UTF-8";
-    LC_IDENTIFICATION = "nl_NL.UTF-8";
-    LC_MEASUREMENT = "nl_NL.UTF-8";
-    LC_MONETARY = "nl_NL.UTF-8";
-    LC_NAME = "nl_NL.UTF-8";
-    LC_NUMERIC = "nl_NL.UTF-8";
-    LC_PAPER = "nl_NL.UTF-8";
-    LC_TELEPHONE = "nl_NL.UTF-8";
-    LC_TIME = "nl_NL.UTF-8";
-  };
-
-  # Configure keymap in X11
   services = {
     displayManager = {
       sddm = {
@@ -56,41 +37,14 @@
       };
     };
     xserver = {
-      enable = true;
-
       windowManager = {
         qtile = {
           enable = true;
         };
       };
-
-
-      xkb = {
-        layout = "us";
-        variant = "";
-      };
     };
   };
 
-  users.users.rba = {
-    isNormalUser = true;
-    description = "Rik Bastiaens";
-    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
-    shell = pkgs.zsh;
-    packages = with pkgs; [];
-  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  nixpkgs.config.packageOverrides = pkgs: {
-    barracudavpn = pkgs.callPackage /home/rba/nixos-config/build/barracudavpn/default.nix { };
-    gost = pkgs.callPackage /home/rba/nixos-config/build/gost/default.nix { };
-  };
-
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     barracudavpn
     (catppuccin-sddm.override {
@@ -107,138 +61,16 @@
     font-awesome
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
   };
 
-  # List services that you want to enable:
-
   services = {
-    # Enable the OpenSSH daemon.
-    openssh = {
-      enable = true;
-    };
-    blueman = {
-      enable = true;
-    };
     udev = {
       packages = with pkgs; [
         autorandr
       ];
     };
-    prometheus = {
-      exporters = {
-        node = {
-          enable = true;
-          port = 9100;
-          enabledCollectors = [
-            "logind"
-            "systemd"
-          ];
-        };
-      };
-
-      enable = true;
-      scrapeConfigs = [
-          {
-            job_name = "node";
-            static_configs = [{
-              targets = [ "localhost:${toString config.services.prometheus.exporters.node.port}" ];
-            }];
-          }
-        ];
-    };
-    grafana = {
-      #declarativePlugins = with pkgs.grafanaPlugins; [ ... ];
-      enable = true;
-      settings = {
-        server = {
-          http_addr = "127.0.0.1";
-          http_port = 3000;
-          enable_gzip = true;
-          domain = "grafana.local";
-        };
-
-        provision = {
-          enable = true;
-          # datasources.settings.datasources = [
-          #   {
-          #     name = "Prometheus";
-          #     type = "prometheus";
-          #     url = "http://${config.services.prometheus.listenAddress}:${toString config.services.prometheus.port}";
-          #   }
-          # ];
-        # Note: removing attributes from the above `datasources.settings.datasources` is not enough for them to be deleted on `grafana`;
-        # One needs to use the following option:
-        # datasources.settings.deleteDatasources = [ { name = "foo"; orgId = 1; } { name = "bar"; orgId = 1; } ];
-        };
-      };
-    };
   };
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ 22 ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = false;
-
-  system.stateVersion = "24.11"; # Did you read the comment?
-
-  virtualisation = {
-    libvirtd = {
-      enable = true;
-      qemu = {
-        package = pkgs.qemu_kvm;
-        runAsRoot = true;
-        swtpm.enable = true;
-        ovmf = {
-          enable = true;
-          packages = [(pkgs.OVMF.override {
-            secureBoot = true;
-            tpmSupport = true;
-          }).fd];
-        };
-      };
-    };
-    docker = {
-      enable = true;
-      storageDriver = "btrfs";
-    };
-  };
-
-  # RB: Enable support for flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Nix garbage collection settings
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
-
-  # Enable zsh
-  programs = {
-    zsh = {
-      enable = true;
-    };
-  };
-
-  security.sudo.wheelNeedsPassword = false;
-
-  hardware.bluetooth = {
-    enable = true;
-    settings = {
-      General = {
-          ControllerMode = "dual";
-      };
-      Policy = {
-        AutoEnable = true;
-      };
-    };
-  };
-  hardware.bluetooth.powerOnBoot = true;
 }
