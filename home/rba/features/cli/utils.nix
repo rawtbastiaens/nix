@@ -1,29 +1,33 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    ansible
+    ansible-lint
+    binutils
+    brightnessctl
+    btop
+    ethtool
+    file
+    fzf
+    htop
     iftop
     iotop
-    htop
-    fzf
-    ethtool
-    binutils
-    btop
     jq
-    file
     lsof
-    nmap
     ltrace
+    netcat-openbsd
+    nmap
     p7zip
     pciutils
-    strace
     ripgrep
+    strace
     tree
     unzip
     usbutils
+    virt-manager
     vsce
     which
     xz
     yq-go
     zip
-    brightnessctl
   ];
 }
