@@ -46,7 +46,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    barracudavpn
     (catppuccin-sddm.override {
       flavor = "macchiato";
       font = "Noto Sans";
