@@ -72,7 +72,7 @@
   users.users.rba = {
     isNormalUser = true;
     description = "Rik Bastiaens";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
     shell = pkgs.zsh;
     packages = with pkgs; [];
   };
@@ -141,9 +141,26 @@
 
   system.stateVersion = "24.11"; # Did you read the comment?
 
-  virtualisation.docker = {
-    enable = true;
-    storageDriver = "btrfs";
+  virtualisation = {
+    libvirtd = {
+      enable = true;
+      qemu = {
+        package = pkgs.qemu_kvm;
+        runAsRoot = true;
+        swtpm.enable = true;
+        ovmf = {
+          enable = true;
+          packages = [(pkgs.OVMF.override {
+            secureBoot = true;
+            tpmSupport = true;
+          }).fd];
+        };
+      };
+    };
+    docker = {
+      enable = true;
+      storageDriver = "btrfs";
+    };
   };
 
   # RB: Enable support for flakes
