@@ -16,5 +16,6 @@
     ./gtk.nix
     ./syncthing.nix
     ./obsidian.nix
+    ./vlc.nix
   ];
 }
