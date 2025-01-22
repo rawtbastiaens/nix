@@ -24,6 +24,9 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.hosts = {
+    "127.0.0.1" = ["prom.local" "grafana.local"];
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
@@ -95,11 +98,7 @@
       font = "Noto Sans";
       fontSize = "12";
     })
-    gost
     inetutils
-    jdk8
-    jre8
-    read-edid
     vim
     wget
     gcc
@@ -130,6 +129,54 @@
       packages = with pkgs; [
         autorandr
       ];
+    };
+    prometheus = {
+      exporters = {
+        node = {
+          enable = true;
+          port = 9100;
+          enabledCollectors = [
+            "logind"
+            "systemd"
+          ];
+        };
+      };
+
+      enable = true;
+      scrapeConfigs = [
+          {
+            job_name = "node";
+            static_configs = [{
+              targets = [ "localhost:${toString config.services.prometheus.exporters.node.port}" ];
+            }];
+          }
+        ];
+    };
+    grafana = {
+      #declarativePlugins = with pkgs.grafanaPlugins; [ ... ];
+      enable = true;
+      settings = {
+        server = {
+          http_addr = "127.0.0.1";
+          http_port = 3000;
+          enable_gzip = true;
+          domain = "grafana.local";
+        };
+
+        provision = {
+          enable = true;
+          # datasources.settings.datasources = [
+          #   {
+          #     name = "Prometheus";
+          #     type = "prometheus";
+          #     url = "http://${config.services.prometheus.listenAddress}:${toString config.services.prometheus.port}";
+          #   }
+          # ];
+        # Note: removing attributes from the above `datasources.settings.datasources` is not enough for them to be deleted on `grafana`;
+        # One needs to use the following option:
+        # datasources.settings.deleteDatasources = [ { name = "foo"; orgId = 1; } { name = "bar"; orgId = 1; } ];
+        };
+      };
     };
   };
 
