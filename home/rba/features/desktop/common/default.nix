@@ -17,5 +17,6 @@
     ./syncthing.nix
     ./obsidian.nix
     ./vlc.nix
+    ./noisetorch.nix
   ];
 }
