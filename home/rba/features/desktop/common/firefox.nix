@@ -25,6 +25,18 @@
         privateDefault = "DuckDuckGo";
         order = ["DuckDuckGo" "Google"];
         engines = {
+          
+          "MyNixOS" = {
+            urls = [{
+              template = "https://mynixos.com/search";
+              params = [
+                { name = "q"; value = "{searchTerms}"; }
+              ];
+            }];
+
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = [ "@mn" ];
+          };
           "Nix Packages" = {
             urls = [{
               template = "https://search.nixos.org/packages";
