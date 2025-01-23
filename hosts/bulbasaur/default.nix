@@ -14,6 +14,8 @@
       ../common/libvirtd.nix
       ../common/monitoring.nix
       ../common/languages.nix
+      ../common/noisetorch.nix
+      ../common/btrfs.nix
     ];
 
   # Bootloader.
