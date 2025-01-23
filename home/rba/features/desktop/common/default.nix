@@ -19,4 +19,7 @@
     ./vlc.nix
     ./noisetorch.nix
   ];
+
+  xdg.portal.enable = true;
 }
+
