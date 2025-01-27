@@ -16,6 +16,7 @@
       ../common/languages.nix
       ../common/noisetorch.nix
       ../common/btrfs.nix
+      ../common/sops.nix
     ];
 
   # Bootloader.
@@ -32,19 +33,20 @@
   };
 
   services = {
-    displayManager = {
-      sddm = {
-        enable = true;
-        theme = "catppuccin-macchiato";
-        package = pkgs.kdePackages.sddm;
-      };
-    };
+    # displayManager = {
+    #   sddm = {
+    #     enable = true;
+    #     theme = "catppuccin-macchiato";
+    #     package = pkgs.kdePackages.sddm;
+    #   };
+    # };
     xserver = {
       windowManager = {
         qtile = {
           enable = true;
         };
       };
+      desktopManager.plasma6.enable = true;
     };
   };
 
