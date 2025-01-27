@@ -13,13 +13,20 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  # fileSystems."/" =
+  #   { device = "/dev/disk/by-uuid/6e5428e0-62af-4c30-9362-f5e369c59a57";
+  #     fsType = "btrfs";
+  #     options = [ "subvol=@" ];
+  #   };
+
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/6e5428e0-62af-4c30-9362-f5e369c59a57";
+    { device = "/dev/disk/by-uuid/555c2e3e-a7ef-4fe1-8a68-031b56c563bd";
       fsType = "btrfs";
       options = [ "subvol=@" ];
     };
 
-  boot.initrd.luks.devices."luks-1e3bfc58-18d2-49ee-8992-4018e2c7d64c".device = "/dev/disk/by-uuid/1e3bfc58-18d2-49ee-8992-4018e2c7d64c";
+  boot.initrd.luks.devices."luks-76085d89-6a37-4040-a60d-bf20a8dece7e".device = "/dev/disk/by-uuid/76085d89-6a37-4040-a60d-bf20a8dece7e";
+  #boot.initrd.luks.devices."luks-1e3bfc58-18d2-49ee-8992-4018e2c7d64c".device = "/dev/disk/by-uuid/1e3bfc58-18d2-49ee-8992-4018e2c7d64c";
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/17D0-2989";
