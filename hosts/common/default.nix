@@ -31,12 +31,21 @@
     };
   };
 
-  users.users.rba = {
-    isNormalUser = true;
-    description = "Rik Bastiaens";
-    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
-    shell = pkgs.zsh;
-    packages = with pkgs; [];
+  users.users = {
+    rba = {
+      isNormalUser = true;
+      description = "Rik Bastiaens";
+      extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
+      shell = pkgs.zsh;
+      packages = with pkgs; [];
+    };
+    rik = {
+      isNormalUser = true;
+      description = "Rik Bastiaens";
+      extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
+      shell = pkgs.zsh;
+      packages = with pkgs; [];
+    };
   };
 
   # Allow unfree packages
