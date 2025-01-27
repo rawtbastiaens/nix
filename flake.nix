@@ -5,6 +5,9 @@
     # Nixpkgs
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+
+    sops-nix.url = "github:Mic92/sops-nix";
+
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -45,6 +48,11 @@
         pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home/rba/bulbasaur.nix];
+      };
+      "rik@bulbasaur" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [./home/rik/bulbasaur.nix];
       };
       "rba@crobat" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
