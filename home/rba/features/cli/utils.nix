@@ -29,5 +29,6 @@
     xz
     yq-go
     zip
+    age
   ];
 }
