@@ -1,7 +1,9 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    age
     ansible
     ansible-lint
+    bc
     binutils
     brightnessctl
     btop
@@ -29,6 +31,5 @@
     xz
     yq-go
     zip
-    age
   ];
 }
