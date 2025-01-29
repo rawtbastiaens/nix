@@ -8,15 +8,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../common/default.nix
-      ../common/bluetooth.nix
-      ../common/docker.nix
-      ../common/libvirtd.nix
-      ../common/monitoring.nix
-      ../common/languages.nix
-      ../common/noisetorch.nix
-      ../common/btrfs.nix
-      ../common/sops.nix
+      ../common/
+      ../optional/languages.nix
+      ../optional/monitoring.nix
+      ../optional/noisetorch.nix
     ];
 
   # Bootloader.
