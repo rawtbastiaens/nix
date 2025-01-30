@@ -18,6 +18,7 @@
     ./obsidian.nix
     ./vlc.nix
     ./noisetorch.nix
+    ./libreoffice.nix
     ./network.nix
   ];
 
