@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../common/
+      ../common
       ../optional/languages.nix
       ../optional/monitoring.nix
       ../optional/noisetorch.nix
