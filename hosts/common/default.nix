@@ -16,6 +16,7 @@
       ./sops.nix
       ./ssh.nix
       ./users.nix
+      ./vagrant.nix
       ./x11.nix
       ./zsh.nix
     ];
