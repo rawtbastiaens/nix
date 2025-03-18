@@ -4,12 +4,16 @@
   ...
 }: {
   imports = [
+    ./alacritty.nix
     ./kitty.nix
+    ./brave.nix
+    ./ghostty.nix
     ./pavucontrol.nix
     ./discord.nix
     ./spotify.nix
     ./vscodium.nix
     ./randr.nix
+    ./games.nix
     ./productivity.nix
     ./screenkey.nix
     ./firefox.nix
