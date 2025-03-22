@@ -12,7 +12,6 @@
     markdownlint-cli
     newsboat
     nodejs_22
-    python3
     remmina
     vscodium
     zsh-completions
