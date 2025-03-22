@@ -16,7 +16,7 @@
     ./games.nix
     ./productivity.nix
     ./screenkey.nix
-    ./firefox.nix
+    ./browsers.nix
     ./gtk.nix
     ./syncthing.nix
     ./obsidian.nix
