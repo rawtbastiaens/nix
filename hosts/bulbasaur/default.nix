@@ -41,8 +41,11 @@
           enable = true;
         };
       };
-      desktopManager.plasma6.enable = true;
+      desktopManager.plasma5.enable = true;
     };
+    xrdp.enable = true;
+    xrdp.defaultWindowManager = "qtile start";
+    xrdp.openFirewall = true;
   };
 
   environment.systemPackages = with pkgs; [
