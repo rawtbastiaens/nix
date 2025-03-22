@@ -5,6 +5,10 @@
   home.username = "rba";
   home.homeDirectory = "/home/rba";
   home.stateVersion = "24.11";
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    XCURSOR_SIZE = "16";
+  };
   imports = [
     ./features/desktop/common
     ./features/desktop/qtile
