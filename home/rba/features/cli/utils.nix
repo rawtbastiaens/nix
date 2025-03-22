@@ -1,8 +1,12 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     age
+    dig
+    wireguard-tools
+    asdf-vm
     ansible
     ansible-lint
+    ansible-language-server
     bc
     binutils
     brightnessctl
@@ -30,6 +34,8 @@
     which
     xz
     yq-go
+    virt-viewer
+    yt-dlp
     zip
   ];
 }
