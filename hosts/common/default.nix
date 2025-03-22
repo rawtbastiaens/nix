@@ -6,9 +6,9 @@
     [
       ./bluetooth.nix
       ./btrfs.nix
-      ./docker.nix
+      #./docker.nix
       ./gpg.nix
-      ./libvirtd.nix
+      #./libvirtd.nix
       ./locale.nix
       ./networking.nix
       ./nix-settings.nix
@@ -19,6 +19,9 @@
       ./vagrant.nix
       ./x11.nix
       ./zsh.nix
+      ./k8s.nix
+      ./rustdesk.nix
+      ./buildtools.nix
     ];
   environment.systemPackages = with pkgs; [];
 }
