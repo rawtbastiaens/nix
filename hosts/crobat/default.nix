@@ -4,12 +4,10 @@
   imports =
     [
       ./hardware-configuration.nix
-      ../common/default.nix
-      ../common/bluetooth.nix
-      ../common/docker.nix
-      ../common/libvirtd.nix
-      ../common/monitoring.nix
-      ../common/languages.nix
+      ../common
+      ../optional/languages.nix
+      ../optional/monitoring.nix
+      ../optional/noisetorch.nix
     ];
 
   # Bootloader.
