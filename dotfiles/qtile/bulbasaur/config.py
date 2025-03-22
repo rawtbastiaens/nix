@@ -164,7 +164,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="Mona Sans",
+    font="FiraCode Nerd Font Mono",
     fontsize=14,
     padding=3,
     background="#00000000",
@@ -194,11 +194,17 @@ screens = [
                 ),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
-                widget.Bluetooth(),
+                widget.CPU(
+                   format=' {load_percent}%',
+                ),
+                widget.Memory(
+                    format=' {MemUsed: .0f}{ms}/{MemTotal: .0f}{ms}',
+                ),
                 widget.Battery(),
+                widget.Spacer(length=20),
+                widget.Clock(format="󰥔 %H:%M"),
+                widget.Spacer(length=20),
                 widget.Systray(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
                 widget.Wallpaper(
                     directory="~/.config/qtile/wallpapers",
                     fmt="",
