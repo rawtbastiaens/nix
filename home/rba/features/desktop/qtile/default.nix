@@ -15,6 +15,7 @@
     tmux
     pcmanfm
     dmenu
+    pywal
   ];
 
   programs.rofi = {
