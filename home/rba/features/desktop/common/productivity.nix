@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     ansible-language-server
-    docker
+    #docker
     entr
     ferdium
     gitkraken
