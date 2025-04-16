@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./git.nix
+    ./productivity.nix
     ./x11.nix
     ./zsh.nix
     ./nvim.nix
