@@ -28,20 +28,23 @@
   };
 
   services = {
-    # displayManager = {
-    #   sddm = {
-    #     enable = true;
-    #     theme = "catppuccin-macchiato";
-    #     package = pkgs.kdePackages.sddm;
-    #   };
-    # };
+    displayManager = {
+      autoLogin = {
+        enable = true;
+        user = "rba";
+      };
+      sddm = {
+        enable = true;
+        theme = "catppuccin-macchiato";
+        package = pkgs.kdePackages.sddm;
+      };
+    };
     xserver = {
       windowManager = {
         qtile = {
           enable = true;
         };
       };
-      desktopManager.plasma5.enable = true;
     };
     xrdp.enable = true;
     xrdp.defaultWindowManager = "qtile start";
@@ -67,12 +70,30 @@
     enable = true;
     enableSSHSupport = true;
   };
+  programs.steam.enable = true;
+
+  system.autoUpgrade = {
+    enable = true;
+  };
+
+  services = {
+    autorandr = {
+      enable = true;
+      hooks = {
+        postswitch = {
+          "reload-qtile" = "qtile cmd-obj -o cmd -f reload_config";
+        };
+      };
+    };
+  };
 
   services = {
     udev = {
       packages = with pkgs; [
         autorandr
       ];
+      extraRules =
+           "SUBSYSTEM==\"drm\", ACTION==\"change\", ATTR{status}==\"connected\",  ENV{DISPLAY}=\":0\", ENV{XAUTHORITY}=\"/home/rba/.Xauthority\",RUN+=\"${pkgs.autorandr}/bin/autorandr --change \"";
     };
   };
 }
