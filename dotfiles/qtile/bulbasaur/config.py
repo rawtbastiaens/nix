@@ -194,6 +194,14 @@ screens = [
                 ),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
+                widget.Net(
+                    interface='wlp146s0',
+                    format='{interface}:  {up:6.2f}{up_suffix:<2}  {down:6.2f}{down_suffix:<2}',
+                ),
+                widget.Net(
+                    interface='wg-home',
+                    format='{interface}:  {up:6.2f}{up_suffix:<2}  {down:6.2f}{down_suffix:<2}',
+                ),
                 widget.CPU(
                    format=' {load_percent}%',
                 ),
@@ -207,6 +215,7 @@ screens = [
                 widget.Systray(),
                 widget.Wallpaper(
                     directory="~/.config/qtile/wallpapers",
+                    wallpaper="pkmn_silver.jpg",
                     fmt="",
                 ),
             ],
@@ -246,6 +255,7 @@ screens = [
                 widget.QuickExit(),
                 widget.Wallpaper(
                     directory="~/.config/qtile/wallpapers",
+                    wallpaper="pkmn_silver.jpg",
                     fmt="",
                 ),
             ],
