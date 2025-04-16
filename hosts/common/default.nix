@@ -6,9 +6,9 @@
     [
       ./bluetooth.nix
       ./btrfs.nix
-      #./docker.nix
+      ./docker.nix
       ./gpg.nix
-      #./libvirtd.nix
+      ./libvirtd.nix
       ./locale.nix
       ./networking.nix
       ./nix-settings.nix
