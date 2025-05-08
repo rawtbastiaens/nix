@@ -126,6 +126,16 @@
               keyword = "qt";
               url = "https://docs.qtile.org/en/stable/";
             }
+            {
+              name = "Proxmox Homelab";
+              keyword = "pm";
+              url = "https://192.168.1.253:8006";
+            }
+            {
+              name = "OPNsense Homelab";
+              keyword = "opn";
+              url = "https://192.168.1.250:10443";
+            }
           ];
         }
       ];
