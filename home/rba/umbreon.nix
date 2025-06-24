@@ -12,6 +12,10 @@
   imports = [
     ./features/desktop/common
     ./features/cli
+    ./features/optional/discord.nix
+    ./features/optional/gaming.nix
+    ./features/optional/noisetorch.nix
+    ./features/optional/wayland.nix
   ];
 
   home.file = {
