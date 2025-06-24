@@ -4,26 +4,24 @@
   ...
 }: {
   imports = [
-    ./alacritty.nix
-    ./kitty.nix
-    ./brave.nix
-    ./ghostty.nix
-    ./pavucontrol.nix
-    ./discord.nix
-    ./spotify.nix
-    ./vscodium.nix
-    ./randr.nix
-    ./games.nix
-    ./productivity.nix
-    ./screenkey.nix
     ./browsers.nix
+    ./discord.nix
+    ./games.nix
     ./gtk.nix
-    ./syncthing.nix
-    ./obsidian.nix
-    ./vlc.nix
-    ./noisetorch.nix
+    ./kitty.nix
     ./libreoffice.nix
     ./network.nix
+    ./noisetorch.nix
+    ./obsidian.nix
+    ./pavucontrol.nix
+    ./productivity.nix
+    ./randr.nix
+    ./screenkey.nix
+    ./spotify.nix
+    ./syncthing.nix
+    ./vlc.nix
+    ./vscodium.nix
+    ./wayland.nix
   ];
 
   xdg.portal = {
