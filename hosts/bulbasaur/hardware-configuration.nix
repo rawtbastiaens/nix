@@ -26,6 +26,12 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
+  fileSystems."/mnt/nas" = {
+    device = "192.168.1.251:/mnt/zfs_pool/user";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" ];
+  };
+
   #swapDevices =
   #  [ { device = "/dev/disk/by-uuid/1823b55d-3293-474b-a984-0739918b5869"; }
   #  ];
