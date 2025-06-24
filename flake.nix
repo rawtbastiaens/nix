@@ -4,7 +4,7 @@
   inputs = {
     # Nixpkgs
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
 
     sops-nix.url = "github:Mic92/sops-nix";
 
@@ -14,7 +14,7 @@
     };
     nur.url = "github:nix-community/NUR";
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -41,6 +41,13 @@
           inherit inputs outputs;
         };
       };
+      # Desktop
+      umbreon = nixpkgs.lib.nixosSystem {
+        modules = [./hosts/umbreon];
+        specialArgs = {
+          inherit inputs outputs;
+        };
+      };
     };
 
     homeConfigurations = {
@@ -58,6 +65,11 @@
         pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home/rba/crobat.nix];
+      };
+      "rba@umbreon" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [./home/rba/umbreon.nix];
       };
     };
   };
