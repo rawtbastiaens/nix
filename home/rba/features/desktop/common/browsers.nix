@@ -94,6 +94,11 @@
           toolbar = true;
           bookmarks = [
             {
+              name = "Ilionx password reset";
+              tags = [ "work" ];
+              url = "https://account.activedirectory.windowsazure.com/ChangePassword.aspx";
+            }
+            {
               name = "NixOS wiki";
               tags = [ "wiki" "nix" ];
               url = "https://wiki.nixos.org/";
