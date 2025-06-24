@@ -6,6 +6,7 @@
     [
       ./audio.nix
       ./bluetooth.nix
+      ./latex.nix
       ./btrfs.nix
       ./docker.nix
       ./gpg.nix
@@ -23,6 +24,8 @@
       ./k8s.nix
       ./rustdesk.nix
       ./buildtools.nix
+      ./hyprland.nix
     ];
-  environment.systemPackages = with pkgs; [];
+  environment.systemPackages = with pkgs; [
+  ];
 }

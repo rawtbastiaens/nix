@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ../common
       ../optional/languages.nix
+      ../optional/barracuda.nix
       ../optional/monitoring.nix
       ../optional/noisetorch.nix
     ];
@@ -29,16 +30,6 @@
 
   services = {
     displayManager = {
-      autoLogin = {
-        enable = true;
-        user = "rba";
-      };
-      sddm = {
-        enable = true;
-        theme = "catppuccin-macchiato";
-        package = pkgs.kdePackages.sddm;
-      };
-    };
     xserver = {
       windowManager = {
         qtile = {
@@ -64,6 +55,8 @@
     xorg.xev
     noto-fonts
     font-awesome
+    plasma-browser-integration
+    gnupg
   ];
 
   programs.gnupg.agent = {
@@ -71,6 +64,10 @@
     enableSSHSupport = true;
   };
   programs.steam.enable = true;
+
+  programs.hyprland = {
+    enable = true;
+  };
 
   system.autoUpgrade = {
     enable = true;
