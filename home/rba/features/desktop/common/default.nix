@@ -5,23 +5,25 @@
 }: {
   imports = [
     ./browsers.nix
-    ./discord.nix
-    ./games.nix
+    # ./discord.nix
+    # ./games.nix
     ./gtk.nix
     ./kitty.nix
+    ./ghostty.nix
     ./libreoffice.nix
     ./network.nix
-    ./noisetorch.nix
-    ./obsidian.nix
+    # ./noisetorch.nix
+    # ./obsidian.nix
     ./pavucontrol.nix
     ./productivity.nix
     ./randr.nix
-    ./screenkey.nix
+    # ./screenkey.nix
     ./spotify.nix
     ./syncthing.nix
     ./vlc.nix
     ./vscodium.nix
-    ./wayland.nix
+    ./fonts.nix
+    # ./wayland.nix
   ];
 
   xdg.portal = {

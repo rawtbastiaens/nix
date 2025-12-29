@@ -1,8 +1,4 @@
 {
-  pkgs,
-  config,
-  ...
-}: {
   imports = [
     ./git.nix
     ./productivity.nix

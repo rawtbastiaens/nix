@@ -25,9 +25,9 @@
       };
       search = {
         force = true;
-        default = "DuckDuckGo";
-        privateDefault = "DuckDuckGo";
-        order = ["DuckDuckGo" "Google"];
+        default = "ddg";
+        privateDefault = "ddg";
+        order = ["ddg" "google"];
         engines = {
           
           "MyNixOS" = {
@@ -66,7 +66,7 @@
             urls = [{
               template = "https://home-manager-options.extranix.com";
               params = [
-                { name = "release"; value = "release-24.11"; }
+                { name = "release"; value = "release-25.11"; }
                 { name = "query"; value = "{searchTerms}"; }
               ];
             }];
@@ -86,67 +86,70 @@
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = [ "@hmu" ];
           };
-          "Bing".metaData.hidden = true;
+          "bing".metaData.hidden = true;
         };
       };
-      bookmarks = [
-        {
-          name = "Nix sites";
-          toolbar = true;
-          bookmarks = [
-            {
-              name = "Ilionx password reset";
-              tags = [ "work" ];
-              url = "https://account.activedirectory.windowsazure.com/ChangePassword.aspx";
-            }
-            {
-              name = "NixOS wiki";
-              tags = [ "wiki" "nix" ];
-              url = "https://wiki.nixos.org/";
-            }
-            {
-              name = "NixOS NUR";
-              tags = ["nix"];
-              url = "https://nur.nix-community.org/";
-            }
-            {
-              name = "ilionx AFAS";
-              tags = ["work"];
-              keyword = "afas";
-              url = "https://89311.afasinsite.nl";
-            }
-            {
-              name = "ilionx Jira";
-              tags = ["work"];
-              keyword = "jira";
-              url = "https://qnh-hawaii.atlassian.net/jira/your-work";
-            }
-            {
-              name = "ilionx Confluence";
-              tags = ["work"];
-              keyword = "wiki";
-              url = "https://qnh-hawaii.atlassian.net/wiki/home";
-            }
-            {
-              name = "Qtile docs";
-              keyword = "qt";
-              url = "https://docs.qtile.org/en/stable/";
-            }
-            {
-              name = "Proxmox Homelab";
-              keyword = "pm";
-              url = "https://192.168.1.253:8006";
-            }
-            {
-              name = "OPNsense Homelab";
-              keyword = "opn";
-              url = "https://192.168.1.250:10443";
-            }
-          ];
-        }
-      ];
+      bookmarks = {
+        force = true;
+        settings = [
+          {
+            name = "Nix sites";
+            toolbar = true;
+            bookmarks = [
+              {
+                name = "Ilionx password reset";
+                tags = [ "work" ];
+                url = "https://account.activedirectory.windowsazure.com/ChangePassword.aspx";
+              }
+              {
+                name = "NixOS wiki";
+                tags = [ "wiki" "nix" ];
+                url = "https://wiki.nixos.org/";
+              }
+              {
+                name = "NixOS NUR";
+                tags = ["nix"];
+                url = "https://nur.nix-community.org/";
+              }
+              {
+                name = "ilionx AFAS";
+                tags = ["work"];
+                keyword = "afas";
+                url = "https://89311.afasinsite.nl";
+              }
+              {
+                name = "ilionx Jira";
+                tags = ["work"];
+                keyword = "jira";
+                url = "https://qnh-hawaii.atlassian.net/jira/your-work";
+              }
+              {
+                name = "ilionx Confluence";
+                tags = ["work"];
+                keyword = "wiki";
+                url = "https://qnh-hawaii.atlassian.net/wiki/home";
+              }
+              {
+                name = "Qtile docs";
+                keyword = "qt";
+                url = "https://docs.qtile.org/en/stable/";
+              }
+              {
+                name = "Proxmox Homelab";
+                keyword = "pm";
+                url = "https://192.168.1.253:8006";
+              }
+              {
+                name = "OPNsense Homelab";
+                keyword = "opn";
+                url = "https://192.168.1.250:10443";
+              }
+            ];
+          }
+        ];
+      };
         
-      extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+      extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
         ublock-origin
         multi-account-containers
       ];

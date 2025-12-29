@@ -1,13 +1,9 @@
 {
-  pkgs,
-  lib,
-  ...
-}: {
   programs = {
     zsh = {
       enable = true;
       enableCompletion = true;
-      initExtra = ''
+      initContent = ''
         bindkey -s "^o" "ranger\n"
       '';
 
@@ -20,6 +16,7 @@
         qtc = "nvim ~/.config/qtile/config.py";
         code = "codium";
         g = "git";
+        kx = "kubectx";
       };
       oh-my-zsh = {
         enable = true;
