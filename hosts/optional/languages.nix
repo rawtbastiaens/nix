@@ -6,5 +6,6 @@
     mariadb
     go
     openjdk17-bootstrap
+    cargo
   ];
 }

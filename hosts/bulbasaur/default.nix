@@ -1,18 +1,15 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
       ../common
       ../optional/languages.nix
       ../optional/barracuda.nix
       ../optional/monitoring.nix
       ../optional/noisetorch.nix
+      # ../optional/qtile.nix
     ];
 
   # Bootloader.
@@ -28,34 +25,16 @@
     "127.0.0.1" = ["prom.local" "grafana.local"];
   };
 
-  services = {
-    displayManager = {
-    xserver = {
-      windowManager = {
-        qtile = {
-          enable = true;
-        };
-      };
-    };
-    xrdp.enable = true;
-    xrdp.defaultWindowManager = "qtile start";
-    xrdp.openFirewall = true;
-  };
-
   environment.systemPackages = with pkgs; [
-    (catppuccin-sddm.override {
-      flavor = "macchiato";
-      font = "Noto Sans";
-      fontSize = "12";
-    })
     inetutils
     vim
     wget
     gcc
     xorg.xev
     noto-fonts
-    font-awesome
-    plasma-browser-integration
+    font-awesome_6
+    font-awesome_5
+    font-awesome_4
     gnupg
   ];
 
@@ -71,26 +50,5 @@
 
   system.autoUpgrade = {
     enable = true;
-  };
-
-  services = {
-    autorandr = {
-      enable = true;
-      hooks = {
-        postswitch = {
-          "reload-qtile" = "qtile cmd-obj -o cmd -f reload_config";
-        };
-      };
-    };
-  };
-
-  services = {
-    udev = {
-      packages = with pkgs; [
-        autorandr
-      ];
-      extraRules =
-           "SUBSYSTEM==\"drm\", ACTION==\"change\", ATTR{status}==\"connected\",  ENV{DISPLAY}=\":0\", ENV{XAUTHORITY}=\"/home/rba/.Xauthority\",RUN+=\"${pkgs.autorandr}/bin/autorandr --change \"";
-    };
   };
 }

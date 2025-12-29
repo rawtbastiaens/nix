@@ -2,8 +2,10 @@
 
 {
   environment.systemPackages = with pkgs; [
-    kubectl
-    kubectx
-    kubernetes-helm
+    deadnix
+    nix-diff
+    nix-du
+    nix-melt
+    nil
   ];
 }

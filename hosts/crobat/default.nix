@@ -24,7 +24,7 @@
     displayManager = {
       sddm = {
         enable = true;
-        theme = "catppuccin-macchiato";
+        # theme = "catppuccin-macchiato";
         package = pkgs.kdePackages.sddm;
       };
     };
@@ -40,11 +40,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    (catppuccin-sddm.override {
-      flavor = "macchiato";
-      font = "Noto Sans";
-      fontSize = "12";
-    })
+    # (catppuccin-sddm.override {
+    #   flavor = "macchiato";
+    #   font = "Noto Sans";
+    #   fontSize = "12";
+    # })
     inetutils
     jdk8
     jre8

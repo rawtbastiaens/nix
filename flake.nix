@@ -4,7 +4,7 @@
   inputs = {
     # Nixpkgs
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
     sops-nix.url = "github:Mic92/sops-nix";
 
@@ -29,7 +29,11 @@
     nixosConfigurations = {
       # Work laptop
       bulbasaur = nixpkgs.lib.nixosSystem {
-        modules = [./hosts/bulbasaur];
+        modules = [
+          ./hosts/bulbasaur
+            # TODO fix this
+            # home-manager.nixosModules.home-manager
+        ];
         specialArgs = {
           inherit inputs outputs;
         };
@@ -55,11 +59,6 @@
         pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home/rba/bulbasaur.nix];
-      };
-      "rik@bulbasaur" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home/rik/bulbasaur.nix];
       };
       "rba@crobat" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
