@@ -20,6 +20,7 @@
     ./features/desktop/optional/obsidian.nix
     ./features/desktop/optional/wayland.nix
     ./features/desktop/optional/mail.nix
+    ./features/desktop/optional/calibre.nix
   ];
 
   home.file = {
