@@ -27,10 +27,14 @@ return {
     })
   end,
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '<leader>ff', ':Neotree reveal', desc = 'NeoTree - find current file in tree', silent = true },
   },
   opts = {
     filesystem = {
+      follow_current_file = {
+        enabled = true,
+        leave_dirs_open = false,
+      },
       hijack_netrw_behavior = "open_current",
       window = {
         mappings = {
