@@ -5,5 +5,6 @@
     bibata-cursors
     material-cursors
     wl-clipboard
+    swaync
   ];
 }
