@@ -7,4 +7,5 @@
     wl-clipboard
     swaync
   ];
+  services.swaync.enable = true;
 }
