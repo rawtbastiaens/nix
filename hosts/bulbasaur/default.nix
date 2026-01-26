@@ -36,6 +36,7 @@
     font-awesome_5
     font-awesome_4
     gnupg
+    freerdp
   ];
 
   programs.gnupg.agent = {
