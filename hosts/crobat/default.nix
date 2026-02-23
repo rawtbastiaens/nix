@@ -8,6 +8,7 @@
       ../optional/languages.nix
       ../optional/monitoring.nix
       ../optional/noisetorch.nix
+      ../optional/librewolf.nix
     ];
 
   # Bootloader.
