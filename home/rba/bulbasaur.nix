@@ -16,6 +16,7 @@
     ./features/desktop/optional/coding.nix
     #./features/desktop/optional/discord.nix
     ./features/desktop/optional/gaming.nix
+    ./features/desktop/optional/librewolf.nix
     ./features/desktop/optional/noisetorch.nix
     ./features/desktop/optional/obsidian.nix
     ./features/desktop/optional/wayland.nix
