@@ -9,6 +9,7 @@
       ../optional/barracuda.nix
       ../optional/monitoring.nix
       ../optional/noisetorch.nix
+      ../optional/librewolf.nix
       # ../optional/qtile.nix
     ];
 
