@@ -30,6 +30,7 @@
     vim
     wget
     librewolf
+    logseq
     gcc
     xorg.xev
     noto-fonts
