@@ -29,6 +29,7 @@
     inetutils
     vim
     wget
+    librewolf
     gcc
     xorg.xev
     noto-fonts
