@@ -28,6 +28,7 @@
 
   environment.systemPackages = with pkgs; [
     inetutils
+    bat
     vim
     wget
     librewolf
