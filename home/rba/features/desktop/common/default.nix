@@ -19,6 +19,7 @@
     ./randr.nix
     # ./screenkey.nix
     ./spotify.nix
+    ./teams.nix
     ./syncthing.nix
     ./vlc.nix
     ./vscodium.nix
@@ -29,7 +30,11 @@
   xdg.portal = {
     config.common.default = "*";
     enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+    ];
   };
 
 }
