@@ -28,6 +28,7 @@
 
   environment.systemPackages = with pkgs; [
     inetutils
+    teams-for-linux
     bat
     vim
     wget
