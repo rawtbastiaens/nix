@@ -9,5 +9,6 @@
     ./home-manager.nix
     ./env.nix
     ./lazygit.nix
+    ./ranger.nix
   ];
 }
