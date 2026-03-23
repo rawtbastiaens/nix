@@ -5,7 +5,7 @@
     };
   };
   home.file.".config/ranger" = {
-    source = "../../../../dotfiles/ranger";
+    source = ../../../../dotfiles/ranger;
     recursive = true;
   };
 }

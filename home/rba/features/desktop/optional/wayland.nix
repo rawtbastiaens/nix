@@ -5,7 +5,6 @@
     bibata-cursors
     material-cursors
     wl-clipboard
-    swaync
   ];
   services.swaync.enable = true;
 }
