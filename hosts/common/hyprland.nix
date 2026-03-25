@@ -2,17 +2,18 @@
 
 {
   environment.systemPackages = with pkgs; [
-    wofi
-    hyprpaper
-    hyprshot
-    hyprlock
+    cliphist
     grim
+    hyprlock
+    hyprpaper
+    hyprpicker
+    hyprprop
+    hyprshot
+    rofi
     slurp
     swappy
     wl-clipboard
-    cliphist
-    rofi
-    hyprpicker
+    wofi
   ];
   programs.waybar = {
     enable = true;
