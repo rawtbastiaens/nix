@@ -27,6 +27,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    kdePackages.kwallet-pam
     inetutils
     teams-for-linux
     bat
