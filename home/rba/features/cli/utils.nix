@@ -7,7 +7,6 @@
     asdf-vm
     ansible
     ansible-lint
-    ansible-language-server
     bc
     binutils
     brightnessctl
