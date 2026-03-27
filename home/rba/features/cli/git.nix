@@ -2,9 +2,9 @@
   programs = {
     git = {
       enable = true;
-      userName = "Rik Bastiaens";
-      userEmail = "rbastiaens@ilionx.com";
       settings = {
+        user = "Rik Bastiaens";
+        email = "rbastiaens@ilionx.com";
         aliases = {
           s = "status";
           cv = "commit -v";
