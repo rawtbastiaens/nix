@@ -9,7 +9,7 @@
       ../optional/barracuda.nix
       ../optional/monitoring.nix
       ../optional/noisetorch.nix
-      ../optional/xrdp.nix
+      #../optional/xrdp.nix
       # ../optional/qtile.nix
     ];
 
