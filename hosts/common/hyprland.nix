@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     cliphist
+    wlogout
     grim
     hyprlock
     hyprpaper
