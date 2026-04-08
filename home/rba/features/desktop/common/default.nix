@@ -17,6 +17,7 @@
     ./productivity.nix
     ./randr.nix
     # ./screenkey.nix
+    ./notify.nix
     ./spotify.nix
     ./teams.nix
     ./syncthing.nix
