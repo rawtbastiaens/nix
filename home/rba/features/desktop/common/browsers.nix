@@ -149,6 +149,11 @@
                 keyword = "tennet";
                 url = "https://tennet-itf.topdesk.net/tas/public/login/saml";
               }
+              {
+                name = "ilionx Bitwarden";
+                keyword = "ilionxbw";
+                url = "https://bitwarden.ilionx.cloud/#/login";
+              }
             ];
           }
         ];
