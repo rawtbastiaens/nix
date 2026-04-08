@@ -144,6 +144,11 @@
                 keyword = "opn";
                 url = "https://192.168.1.250:10443";
               }
+              {
+                name = "TenneT Topdesk";
+                keyword = "tennet";
+                url = "https://tennet-itf.topdesk.net/tas/public/login/saml";
+              }
             ];
           }
         ];
