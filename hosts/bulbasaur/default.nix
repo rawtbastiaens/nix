@@ -6,10 +6,9 @@
       ./hardware-configuration.nix
       ../common
       ../optional/languages.nix
-      ../optional/barracuda.nix
       ../optional/monitoring.nix
       ../optional/noisetorch.nix
-      ../optional/barracuda.nix
+      # ../optional/barracuda.nix
       #../optional/xrdp.nix
       # ../optional/qtile.nix
     ];
