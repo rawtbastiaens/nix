@@ -1,4 +1,4 @@
-{ stdenv, lib, dpkg, ar, findutils, gzip }:
+{ stdenv, lib, dpkg, binutils, findutils, gzip }:
 
 stdenv.mkDerivation rec {
   pname = "barracudavpn";
@@ -6,7 +6,7 @@ stdenv.mkDerivation rec {
 
   src = ./barracudavpn_5.3.6_amd64.deb;
 
-  nativeBuildInputs = [ dpkg ar findutils gzip ];
+  nativeBuildInputs = [ dpkg binutils findutils gzip ];
 
   unpackPhase = ''
     ar x $src
