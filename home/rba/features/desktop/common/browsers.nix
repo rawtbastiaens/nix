@@ -154,6 +154,10 @@
                 keyword = "ilionxbw";
                 url = "https://bitwarden.ilionx.cloud/#/login";
               }
+              {
+                name = "Github - VF access";
+                url = "https://github.com/Q24/vf-access";
+              }
             ];
           }
         ];
