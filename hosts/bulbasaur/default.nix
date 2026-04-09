@@ -25,6 +25,8 @@
   networking.networkmanager.enable = true;
   networking.hosts = {
     "127.0.0.1" = ["prom.local" "grafana.local"];
+    "62.140.138.32" = ["nlvir1ngh01rm1" "rm1"];
+    "62.140.138.33" = ["nlehv1ngh01-rm02" "rm2"];
   };
 
   environment.systemPackages = with pkgs; [
