@@ -1,6 +1,10 @@
 {
   description = "Rik's NixOS config";
 
+  nixConfig = {
+    allowUnfree = true;
+  };
+
   inputs = {
     # Nixpkgs
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -36,6 +40,7 @@
         ];
         specialArgs = {
           inherit inputs outputs;
+          barracudavpn = nixpkgs.legacyPackages.x86_64-linux.callPackage ./pkgs/barracudavpn/default.nix { };
         };
       };
       # Private laptop
