@@ -4,6 +4,7 @@
 }: {
   imports = [
     ./browsers.nix
+    ./xdg.nix
     # ./discord.nix
     # ./games.nix
     ./gtk.nix
