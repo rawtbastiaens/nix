@@ -162,6 +162,11 @@
                 name = "Nixos Firefox addon repo";
                 url = "https://nur.nix-community.org/repos/rycee/";
               }
+              {
+                name = "DaaS Confluence";
+                keyword = "daas";
+                url = "https://ilionx-zuid-ad.atlassian.net/wiki/spaces/DaaS/overview";
+              }
             ];
           }
         ];
