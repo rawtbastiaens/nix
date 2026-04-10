@@ -5,6 +5,7 @@
       enableCompletion = true;
       initContent = ''
         bindkey -s "^o" "ranger\n"
+        source <(fzf --zsh)
       '';
 
       shellAliases = {
