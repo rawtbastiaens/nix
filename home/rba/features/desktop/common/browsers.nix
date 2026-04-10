@@ -158,6 +158,10 @@
                 name = "Github - VF access";
                 url = "https://github.com/Q24/vf-access";
               }
+              {
+                name = "Nixos Firefox addon repo";
+                url = "https://nur.nix-community.org/repos/rycee/";
+              }
             ];
           }
         ];
