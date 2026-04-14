@@ -228,6 +228,7 @@
       extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
         ublock-origin
         multi-account-containers
+        keepassxc-browser
       ];
 
       settings = {
