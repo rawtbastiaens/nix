@@ -219,7 +219,26 @@
                 keyword = "hn";
                 url = "https://grafana.nonprod.hollandsnieuwe.nl/";
               }
-
+              {
+                name = "Jellyfin";
+                keyword = "jelly";
+                url = "http://192.168.1.56:8096/web/#/video";
+              }
+              {
+                name = "SABnzbd";
+                keyword = "nzb";
+                url = "http://192.168.1.56:8080/";
+              }
+              {
+                name = "Radarr";
+                keyword = "radarr";
+                url = "http://192.168.1.56:7878/";
+              }
+              {
+                name = "Sonarr";
+                keyword = "sonarr";
+                url = "http://192.168.1.56:8989/";
+              }
             ];
           }
         ];
