@@ -330,6 +330,7 @@
               "downloads-button"
               "ublock0_raymondhill_net-browser-action"
               "_testpilot-containers-browser-action"
+              "keepassxc-browser_keepassxc_org-browser-action"
               "reset-pbm-toolbar-button"
               "unified-extensions-button"
             ];
