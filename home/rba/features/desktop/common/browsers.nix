@@ -131,7 +131,7 @@
         force = true;
         settings = [
           {
-            name = "Nix sites";
+            name = "ilionx";
             toolbar = true;
             bookmarks = [
               {
@@ -139,6 +139,12 @@
                 tags = [ "work" ];
                 url = "https://account.activedirectory.windowsazure.com/ChangePassword.aspx";
               }
+            ];
+          }
+          {
+            name = "Nix sites";
+            toolbar = true;
+            bookmarks = [
               {
                 name = "NixOS wiki";
                 tags = [
