@@ -167,6 +167,12 @@
                 keyword = "daas";
                 url = "https://ilionx-zuid-ad.atlassian.net/wiki/spaces/DaaS/overview";
               }
+              {
+                name = "HollandsNieuwe - Grafana nonprod";
+                keyword = "hn";
+                url = "https://grafana.nonprod.hollandsnieuwe.nl/";
+              }
+              
             ];
           }
         ];
