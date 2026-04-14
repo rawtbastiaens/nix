@@ -1,14 +1,15 @@
 {
   imports = [
+    ./env.nix
     ./git.nix
+    ./home-manager.nix
+    ./lazygit.nix
+    ./nix-tools.nix
+    ./nvim.nix
     ./productivity.nix
+    ./ranger.nix
+    ./utils.nix
     ./x11.nix
     ./zsh.nix
-    ./nvim.nix
-    ./utils.nix
-    ./home-manager.nix
-    ./env.nix
-    ./lazygit.nix
-    ./ranger.nix
   ];
 }
