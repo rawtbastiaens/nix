@@ -3,7 +3,8 @@
   lib,
   inputs,
   ...
-}: {
+}:
+{
   home.packages = with pkgs; [
     chromium
     brave
@@ -27,61 +28,98 @@
         force = true;
         default = "ddg";
         privateDefault = "ddg";
-        order = ["ddg" "google"];
+        order = [
+          "ddg"
+          "google"
+        ];
         engines = {
-          
+
           "MyNixOS" = {
-            urls = [{
-              template = "https://mynixos.com/search";
-              params = [
-                { name = "q"; value = "{searchTerms}"; }
-              ];
-            }];
+            urls = [
+              {
+                template = "https://mynixos.com/search";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
 
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = [ "@mn" ];
           };
           "Nix Packages" = {
-            urls = [{
-              template = "https://search.nixos.org/packages";
-              params = [
-                { name = "type"; value = "packages"; }
-                { name = "query"; value = "{searchTerms}"; }
-              ];
-            }];
+            urls = [
+              {
+                template = "https://search.nixos.org/packages";
+                params = [
+                  {
+                    name = "type";
+                    value = "packages";
+                  }
+                  {
+                    name = "query";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
 
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = [ "@np" ];
           };
           "Jira title search" = {
-            urls = [{
-              template = "https://qnh-hawaii.atlassian.net/issues/";
-              params = [
-                { name = "jql"; value = "summary ~ \"{searchTerms}\*\""; }
-              ];
-            }];
+            urls = [
+              {
+                template = "https://qnh-hawaii.atlassian.net/issues/";
+                params = [
+                  {
+                    name = "jql";
+                    value = "summary ~ \"{searchTerms}\*\"";
+                  }
+                ];
+              }
+            ];
             definedAliases = [ "@j" ];
           };
           "Home Manager Options (stable)" = {
-            urls = [{
-              template = "https://home-manager-options.extranix.com";
-              params = [
-                { name = "release"; value = "release-25.11"; }
-                { name = "query"; value = "{searchTerms}"; }
-              ];
-            }];
+            urls = [
+              {
+                template = "https://home-manager-options.extranix.com";
+                params = [
+                  {
+                    name = "release";
+                    value = "release-25.11";
+                  }
+                  {
+                    name = "query";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
 
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = [ "@hm" ];
           };
           "Home Manager Options (unstable)" = {
-            urls = [{
-              template = "https://home-manager-options.extranix.com";
-              params = [
-                { name = "release"; value = "master"; }
-                { name = "query"; value = "{searchTerms}"; }
-              ];
-            }];
+            urls = [
+              {
+                template = "https://home-manager-options.extranix.com";
+                params = [
+                  {
+                    name = "release";
+                    value = "master";
+                  }
+                  {
+                    name = "query";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
 
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = [ "@hmu" ];
@@ -103,29 +141,32 @@
               }
               {
                 name = "NixOS wiki";
-                tags = [ "wiki" "nix" ];
+                tags = [
+                  "wiki"
+                  "nix"
+                ];
                 url = "https://wiki.nixos.org/";
               }
               {
                 name = "NixOS NUR";
-                tags = ["nix"];
+                tags = [ "nix" ];
                 url = "https://nur.nix-community.org/";
               }
               {
                 name = "ilionx AFAS";
-                tags = ["work"];
+                tags = [ "work" ];
                 keyword = "afas";
                 url = "https://89311.afasinsite.nl";
               }
               {
                 name = "ilionx Jira";
-                tags = ["work"];
+                tags = [ "work" ];
                 keyword = "jira";
                 url = "https://qnh-hawaii.atlassian.net/jira/your-work";
               }
               {
                 name = "ilionx Confluence";
-                tags = ["work"];
+                tags = [ "work" ];
                 keyword = "wiki";
                 url = "https://qnh-hawaii.atlassian.net/wiki/home";
               }
@@ -172,12 +213,12 @@
                 keyword = "hn";
                 url = "https://grafana.nonprod.hollandsnieuwe.nl/";
               }
-              
+
             ];
           }
         ];
       };
-        
+
       extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
         ublock-origin
         multi-account-containers
@@ -260,16 +301,41 @@
         "browser.uiCustomization.state" = builtins.toJSON {
           currentVersion = 20;
           newElementCount = 5;
-          dirtyAreaCache = ["nav-bar" "PersonalToolbar" "toolbar-menubar" "TabsToolbar" "widget-overflow-fixed-list"];
+          dirtyAreaCache = [
+            "nav-bar"
+            "PersonalToolbar"
+            "toolbar-menubar"
+            "TabsToolbar"
+            "widget-overflow-fixed-list"
+          ];
           placements = {
-            PersonalToolbar = ["personal-bookmarks"];
-            TabsToolbar = ["tabbrowser-tabs" "new-tab-button" "alltabs-button"];
-            nav-bar = ["back-button" "forward-button" "stop-reload-button" "urlbar-container" "downloads-button" "ublock0_raymondhill_net-browser-action" "_testpilot-containers-browser-action" "reset-pbm-toolbar-button" "unified-extensions-button"];
-            toolbar-menubar = ["menubar-items"];
-            unified-extensions-area = [];
-            widget-overflow-fixed-list = [];
+            PersonalToolbar = [ "personal-bookmarks" ];
+            TabsToolbar = [
+              "tabbrowser-tabs"
+              "new-tab-button"
+              "alltabs-button"
+            ];
+            nav-bar = [
+              "back-button"
+              "forward-button"
+              "stop-reload-button"
+              "urlbar-container"
+              "downloads-button"
+              "ublock0_raymondhill_net-browser-action"
+              "_testpilot-containers-browser-action"
+              "reset-pbm-toolbar-button"
+              "unified-extensions-button"
+            ];
+            toolbar-menubar = [ "menubar-items" ];
+            unified-extensions-area = [ ];
+            widget-overflow-fixed-list = [ ];
           };
-          seen = ["save-to-pocket-button" "developer-button" "ublock0_raymondhill_net-browser-action" "_testpilot-containers-browser-action"];
+          seen = [
+            "save-to-pocket-button"
+            "developer-button"
+            "ublock0_raymondhill_net-browser-action"
+            "_testpilot-containers-browser-action"
+          ];
         };
 
         # Enable quick actions
