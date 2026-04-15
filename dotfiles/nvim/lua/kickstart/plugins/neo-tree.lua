@@ -18,7 +18,14 @@ return {
       window = {
         mappings = {
           ['\\'] = 'close_window',
+          ["l"] = "open",
+          ["h"] = "close_node",
         },
+      follow_current_file = {
+        enabled = true,
+        leave_dirs_open = false,
+      },
+      hijack_netrw_behavior = "open_current",
       },
     },
   },
