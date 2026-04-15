@@ -1,4 +1,8 @@
-{ stdenv, lib, dpkg, binutils, fetchurl }:
+{
+  stdenv,
+  lib,
+  dpkg,
+}:
 # https://www.youtube.com/watch?v=CqFcl4BmbN4
 
 stdenv.mkDerivation rec {
@@ -19,9 +23,9 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "Barracuda VPN Client 5.3.6 for Linux";
-    homepage = https://dlportal.barracudanetworks.com/;
+    homepage = "https://dlportal.barracudanetworks.com/";
     license = licenses.mit;
-    maintainers = with stdenv.lib.maintainers; [ ];
+    # maintainers = with stdenv.lib.maintainers; [ ];
     platforms = [ "x86_64-linux" ];
   };
 }
