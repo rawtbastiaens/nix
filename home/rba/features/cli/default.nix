@@ -1,5 +1,6 @@
 {
   imports = [
+    ./aws.nix
     ./env.nix
     ./git.nix
     ./home-manager.nix
