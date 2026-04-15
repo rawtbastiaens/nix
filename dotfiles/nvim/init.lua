@@ -688,7 +688,7 @@ require('lazy').setup({
         terraformls = {},
         hadolint = {},
         dockerls = {},
-        kube_linter = {},
+        kubescape = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
