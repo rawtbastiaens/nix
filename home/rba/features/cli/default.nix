@@ -1,5 +1,6 @@
 {
   imports = [
+    ./argocd.nix
     ./aws.nix
     ./env.nix
     ./git.nix
