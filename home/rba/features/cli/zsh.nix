@@ -29,6 +29,7 @@
           "systemd"
           "rsync"
           "kubectl"
+          "aws"
         ];
         theme = "robbyrussell";
       };
