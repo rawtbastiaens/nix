@@ -36,6 +36,7 @@
           "docker"
           "docker-compose"
           "colored-man-pages"
+          "z"
         ];
         theme = "agnoster";
       };
