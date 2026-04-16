@@ -6,6 +6,9 @@
       initContent = ''
         bindkey -s "^o" "ranger\n"
         source <(fzf --zsh)
+        autoload bashcompinit && bashcompinit
+        autoload -Uz compinit && compinit
+        complete -C '$(which aws_completer)' aws
       '';
 
       shellAliases = {
@@ -21,7 +24,12 @@
       };
       oh-my-zsh = {
         enable = true;
-        plugins = ["git" "systemd" "rsync" "kubectl" ];
+        plugins = [
+          "git"
+          "systemd"
+          "rsync"
+          "kubectl"
+        ];
         theme = "robbyrussell";
       };
     };
