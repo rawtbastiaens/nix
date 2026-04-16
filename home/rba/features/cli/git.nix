@@ -7,6 +7,10 @@
         user = {
           name = "Rik Bastiaens";
           email = "rik.bastiaens@vodafoneziggo.com";
+          signingKey = "F34360DF564E368D";
+        };
+        commit = {
+          gpgsign = true;
         };
         aliases = {
           s = "status";
