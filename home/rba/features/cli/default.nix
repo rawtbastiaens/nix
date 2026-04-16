@@ -11,6 +11,7 @@
     ./productivity.nix
     ./ranger.nix
     ./utils.nix
+    ./vault.nix
     ./x11.nix
     ./zsh.nix
   ];
