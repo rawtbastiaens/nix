@@ -5,7 +5,6 @@
       enableCompletion = true;
       initContent = ''
         bindkey -s "^o" "ranger\n"
-        source <(fzf --zsh)
         autoload bashcompinit && bashcompinit
         autoload -Uz compinit && compinit
         complete -C '$(which aws_completer)' aws
@@ -30,8 +29,15 @@
           "rsync"
           "kubectl"
           "aws"
+          "alias-finder"
+          "virtualenv"
+          "fzf"
+          "sudo"
+          "docker"
+          "docker-compose"
+          "colored-man-pages"
         ];
-        theme = "robbyrussell";
+        theme = "agnoster";
       };
     };
   };
