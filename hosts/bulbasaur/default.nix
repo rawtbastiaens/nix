@@ -1,17 +1,16 @@
 { pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../common
-      ../optional/languages.nix
-      ../optional/monitoring.nix
-      ../optional/noisetorch.nix
-      # ../optional/barracuda.nix
-      #../optional/xrdp.nix
-      # ../optional/qtile.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ../common
+    ../optional/languages.nix
+    ../optional/monitoring.nix
+    ../optional/noisetorch.nix
+    # ../optional/barracuda.nix
+    #../optional/xrdp.nix
+    # ../optional/qtile.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -23,9 +22,18 @@
 
   networking.networkmanager.enable = true;
   networking.hosts = {
-    "127.0.0.1" = ["prom.local" "grafana.local"];
-    "62.140.138.32" = ["nlvir1ngh01rm1" "rm1"];
-    "62.140.138.33" = ["nlehv1ngh01-rm02" "rm2"];
+    "127.0.0.1" = [
+      "prom.local"
+      "grafana.local"
+    ];
+    "62.140.138.32" = [
+      "nlvir1ngh01rm1"
+      "rm1"
+    ];
+    "62.140.138.33" = [
+      "nlehv1ngh01-rm02"
+      "rm2"
+    ];
   };
 
   environment.systemPackages = with pkgs; [
@@ -46,6 +54,8 @@
     gnupg
     freerdp
   ];
+
+  services.udisks2.enable = true;
 
   programs.gnupg.agent = {
     enable = true;
