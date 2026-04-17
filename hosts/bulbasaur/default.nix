@@ -41,7 +41,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    barracudavpn
+    (callPackage ../../pkgs/barracudavpn/barracudavpn.nix { })
     kdePackages.kwallet-pam
     inetutils
     teams-for-linux
