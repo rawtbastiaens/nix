@@ -21,6 +21,8 @@
     ./features/desktop/optional/calibre.nix
   ];
 
+  services.udisks2.enable = true;
+
   home.file = {
     ".config/qtile/scripts" = {
       source = ../../dotfiles/qtile/bulbasaur/scripts;
