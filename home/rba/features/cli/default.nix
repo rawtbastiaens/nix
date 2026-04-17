@@ -10,6 +10,7 @@
     ./nvim.nix
     ./productivity.nix
     ./ranger.nix
+    ./udiskie.nix
     ./utils.nix
     ./vault.nix
     ./x11.nix
