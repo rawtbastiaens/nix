@@ -139,6 +139,16 @@
                 tags = [ "work" ];
                 url = "https://account.activedirectory.windowsazure.com/ChangePassword.aspx";
               }
+              {
+                name = "HollandsNieuwe ArgoCD prod";
+                tags = [ "work" ];
+                url = "https://hnprod-argo.ilionx.cloud";
+              }
+              {
+                name = "HollandsNieuwe ArgoCD test";
+                tags = [ "work" ];
+                url = "https://hntest-argo.ilionx.cloud";
+              }
             ];
           }
           {
