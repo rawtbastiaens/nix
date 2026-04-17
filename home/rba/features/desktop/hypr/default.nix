@@ -4,11 +4,15 @@
     enable = true;
   };
 
+  home.packages = with pkgs; [
+    thunar
+  ];
+
   # Kanshi -> automated display config (like autorandr)
   services.kanshi = {
     enable = true;
     systemdTarget = "hyprland-session.target";
-    
+
     profiles = {
       undocked = {
         outputs = [
