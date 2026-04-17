@@ -1,4 +1,11 @@
-{ stdenv, lib, dpkg, binutils, findutils, gzip }:
+{
+  stdenv,
+  lib,
+  dpkg,
+  binutils,
+  findutils,
+  gzip,
+}:
 
 stdenv.mkDerivation rec {
   pname = "barracudavpn";
@@ -6,7 +13,12 @@ stdenv.mkDerivation rec {
 
   src = ./barracudavpn_5.3.6_amd64.deb;
 
-  nativeBuildInputs = [ dpkg binutils findutils gzip ];
+  nativeBuildInputs = [
+    dpkg
+    binutils
+    findutils
+    gzip
+  ];
 
   unpackPhase = ''
     ar x $src
@@ -23,9 +35,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "Barracuda VPN client";
-    homepage = "https://barracuda.com/";
     license = licenses.unfree;
     platforms = [ "x86_64-linux" ];
-    maintainers = [ ];
   };
 }

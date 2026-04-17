@@ -22,59 +22,70 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    ...
-  } @ inputs: let
-    inherit (self) outputs;
-  in {
-    nixosConfigurations = {
-      # Work laptop
-      bulbasaur = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/bulbasaur
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
+    let
+      inherit (self) outputs;
+    in
+    {
+      nixosConfigurations = {
+        # Work laptop
+        bulbasaur = nixpkgs.lib.nixosSystem {
+          modules = [
+            ./hosts/bulbasaur
             # TODO fix this
             # home-manager.nixosModules.home-manager
-        ];
-        specialArgs = {
-          inherit inputs outputs;
-          barracudavpn = nixpkgs.legacyPackages.x86_64-linux.callPackage ./pkgs/barracudavpn/default.nix { };
+            {
+              nixpkgs.overlays = [ (import ./overlays/barracudavpn.nix) ];
+            }
+          ];
+        };
+        # Private laptop
+        crobat = nixpkgs.lib.nixosSystem {
+          modules = [ ./hosts/crobat ];
+          specialArgs = {
+            inherit inputs outputs;
+          };
+        };
+        # Desktop
+        umbreon = nixpkgs.lib.nixosSystem {
+          modules = [ ./hosts/umbreon ];
+          specialArgs = {
+            inherit inputs outputs;
+          };
         };
       };
-      # Private laptop
-      crobat = nixpkgs.lib.nixosSystem {
-        modules = [./hosts/crobat];
-        specialArgs = {
-          inherit inputs outputs;
-        };
-      };
-      # Desktop
-      umbreon = nixpkgs.lib.nixosSystem {
-        modules = [./hosts/umbreon];
-        specialArgs = {
-          inherit inputs outputs;
-        };
-      };
-    };
 
-    homeConfigurations = {
-      "rba@bulbasaur" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home/rba/bulbasaur.nix];
-      };
-      "rba@crobat" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home/rba/crobat.nix];
-      };
-      "rba@umbreon" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home/rba/umbreon.nix];
+      homeConfigurations = {
+        "rba@bulbasaur" = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home/rba/bulbasaur.nix ];
+        };
+        "rba@crobat" = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home/rba/crobat.nix ];
+        };
+        "rba@umbreon" = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home/rba/umbreon.nix ];
+        };
       };
     };
-  };
 }
