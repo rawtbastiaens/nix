@@ -3,7 +3,7 @@
 {
 
   nixpkgs.overlays = [
-    (import ~/.config/nixpkgs/overlays/barracudavpn.nix)
+    (import ../../overlays/barracudavpn.nix)
   ];
   imports = [
     ./hardware-configuration.nix
