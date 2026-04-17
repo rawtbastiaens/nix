@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+
+  nixpkgs.overlays = [
+    (import ~/.config/nixpkgs/overlays/barracudavpn.nix)
+  ];
   imports = [
     ./hardware-configuration.nix
     ../common
@@ -37,6 +41,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    barracudavpn
     kdePackages.kwallet-pam
     inetutils
     teams-for-linux
