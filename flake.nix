@@ -40,6 +40,13 @@
             ./hosts/bulbasaur
             # TODO fix this
             # home-manager.nixosModules.home-manager
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.backupFileExtension = "bkp";
+              home-manager.useUserPackages = true;
+              home-manager.users.rba = import ./home/crobat.nix;
+            }
             {
               nixpkgs.overlays = [ (import ./overlays/barracudavpn.nix) ];
             }
