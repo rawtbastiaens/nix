@@ -15,6 +15,7 @@
         nx-build = "sudo nixos-rebuild switch --flake .#`hostname`";
         hm-build = "home-manager switch --flake .#`id -u -n`@`hostname`";
         nrs = "sudo nixos-rebuild switch --flake .#`hostname`";
+        edit-nix = "cd $HOME/nix && nvim .";
         flake-edit = "$EDITOR ~/nixos-config/flake.nix";
         nx-edit = "$EDITOR ~/nixos-config/nixos/configuration.nix";
         hm-edit = "$EDITOR ~/nixos-config/home-manager/home.nix";
