@@ -22,6 +22,10 @@
         };
       };
     };
+    delta = {
+      enable = true;
+      enableGitIntegration = true;
+    };
   };
   home.packages = with pkgs; [
     meld
