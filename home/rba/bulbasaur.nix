@@ -1,4 +1,9 @@
 {
+  config,
+  pkgs,
+  ...
+}:
+{
   home.username = "rba";
   home.homeDirectory = "/home/rba";
   home.stateVersion = "25.05";
