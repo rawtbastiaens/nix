@@ -5,6 +5,7 @@
       enableCompletion = true;
       initContent = ''
         bindkey -s "^o" "ranger\n"
+        bindkey -s "^b" "nrs\n"
         autoload bashcompinit && bashcompinit
         autoload -Uz compinit && compinit
         complete -C '$(which aws_completer)' aws
