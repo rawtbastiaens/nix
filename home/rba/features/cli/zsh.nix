@@ -6,6 +6,7 @@
       initContent = ''
         bindkey -s "^o" "ranger\n"
         bindkey -s "^b" "nrs\n"
+        bindkey -s "^z" "edit-nix\n"
         autoload bashcompinit && bashcompinit
         autoload -Uz compinit && compinit
         complete -C '$(which aws_completer)' aws
