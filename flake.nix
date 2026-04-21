@@ -47,7 +47,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.backupFileExtension = "bkp";
               home-manager.useUserPackages = true;
-              home-manager.users.rba = import ./home/crobat.nix;
+              home-manager.users.rba = import ./home/rba/bulbasaur.nix;
             }
             {
               nixpkgs.overlays = [ (import ./overlays/barracudavpn.nix) ];
