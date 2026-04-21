@@ -48,6 +48,7 @@
               home-manager.backupFileExtension = "bkp";
               home-manager.useUserPackages = true;
               home-manager.users.rba = import ./home/rba/bulbasaur.nix;
+              home-manager.extraSpecialArgs = { inherit inputs outputs; };
             }
             {
               nixpkgs.overlays = [ (import ./overlays/barracudavpn.nix) ];
