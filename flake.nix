@@ -27,6 +27,7 @@
       self,
       nixpkgs,
       home-manager,
+      sops-nix,
       ...
     }@inputs:
     let
@@ -38,6 +39,7 @@
         bulbasaur = nixpkgs.lib.nixosSystem {
           modules = [
             ./hosts/bulbasaur
+            sops-nix.nixosModules.sops
             # TODO fix this
             # home-manager.nixosModules.home-manager
             home-manager.nixosModules.home-manager
