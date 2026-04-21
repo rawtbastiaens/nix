@@ -15,15 +15,26 @@ return {
   },
   opts = {
     filesystem = {
+      -- Event handler to move to buffer left when opening with nvim . 
+      event_handlers = {
+        {
+          event = "neo_tree_buffer_enter",
+          handler = function()
+            vim.cmd("wincmd l")
+          end,
+        },
+      },
       window = {
         mappings = {
           ['\\'] = 'close_window',
           ["l"] = "open",
           ["h"] = "close_node",
         },
-      follow_current_file = {
-        enabled = true,
-        leave_dirs_open = false,
+        position = "left",
+        follow_current_file = {
+          enabled = true,
+          leave_dirs_open = true,
+        },
       },
       hijack_netrw_behavior = "open_current",
       },
