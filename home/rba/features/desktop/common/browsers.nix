@@ -150,6 +150,13 @@
                 tags = [ "work" ];
                 url = "https://hntest-argo.ilionx.cloud";
               }
+              {
+                name = "AlertOps";
+                tags = [ "work" ];
+                keyword = "alertops";
+                url = "https://app.alertops.com/nextgenhosting/alerts";
+              }
+
             ];
           }
           {
