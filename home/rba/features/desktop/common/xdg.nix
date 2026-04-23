@@ -14,14 +14,13 @@
       };
       tennet = {
         name = "TenneT AVD";
-        exec = "xfreerdp ./Desktop/tennet.rdpw /u:Rik.Bastiaens@tennet.eu /gateway:type:arm /sec:aad /cert:ignore /gfx:rfx /drive:Client,/home/rba/tennet_avd /clipboard";
+        exec = "xfreerdp $HOME/Desktop/tennet.rdpw /u:Rik.Bastiaens@tennet.eu /gateway:type:arm /sec:aad /cert:ignore /gfx:rfx /drive:Client,/home/rba/tennet_avd /clipboard";
         terminal = true;
         categories = [
           "Network"
           "RemoteAccess"
         ];
         icon = "remmina";
-        path = "$HOME";
       };
     };
     mimeApps = {
