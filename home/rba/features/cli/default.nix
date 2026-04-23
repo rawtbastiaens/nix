@@ -8,7 +8,7 @@
     ./lazygit.nix
     ./nix-tools.nix
     ./nvim.nix
-    ./opencode.nix
+    # ./opencode.nix
     ./productivity.nix
     ./ranger.nix
     ./udiskie.nix
