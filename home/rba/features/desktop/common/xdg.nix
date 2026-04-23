@@ -33,6 +33,7 @@
         "application/json" = [ "Neovim.desktop" ];
         "text/markdown" = [ "Neovim.desktop" ];
         "image/png" = [ "feh" ];
+        "x-scheme-handler/terminal" = [ "kitty.desktop" ];
         "x-scheme-handler/http" = [ "firefox.desktop" ];
         "x-scheme-handler/https" = [ "firefox.desktop" ];
         "x-scheme-handler/discord" = [ "vesktop.desktop" ];
