@@ -8,7 +8,7 @@
     glow
     input-leap
     keepassxc
-    keepassxc-cli
+    keepassxccli
     newsboat
     remmina
     zsh-completions
