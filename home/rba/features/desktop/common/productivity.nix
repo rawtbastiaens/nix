@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   home.packages = with pkgs; [
     #docker
     entr
@@ -7,6 +8,7 @@
     glow
     input-leap
     keepassxc
+    keepassxc-cli
     newsboat
     remmina
     zsh-completions
