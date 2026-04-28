@@ -71,6 +71,21 @@
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = [ "@np" ];
           };
+
+          "Protondb" = {
+            urls = [
+              {
+                template = "https://www.protondb.com/search";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+            definedAliases = [ "@p" ];
+          };
           "Jira title search" = {
             urls = [
               {
