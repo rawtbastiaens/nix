@@ -15,6 +15,7 @@
 
       shellAliases = {
         nx-build = "sudo nixos-rebuild switch --flake .#`hostname`";
+        nix-list-installed = "nix-store --query --requisites /run/current-system";
         hm-build = "home-manager switch --flake .#`id -u -n`@`hostname`";
         nrs = "sudo nixos-rebuild switch --flake .#`hostname`";
         edit-nix = "cd $HOME/nix && nvim .";
