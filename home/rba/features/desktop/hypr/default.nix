@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
     plugins = [
-      pkgs.hyprlandPlugins.hyprexpo
+      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
     ];
   };
 
