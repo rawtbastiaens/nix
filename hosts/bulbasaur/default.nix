@@ -59,6 +59,10 @@
     gnupg
     freerdp
   ];
+  environment.pathsToLink = [
+    "/share/applications"
+    "/share/xdg-desktop-portal"
+  ];
 
   services.udisks2.enable = true;
 
