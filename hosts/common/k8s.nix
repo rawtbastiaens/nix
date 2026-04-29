@@ -5,5 +5,6 @@
     kubectl
     kubectx
     kubernetes-helm
+    k9s
   ];
 }
