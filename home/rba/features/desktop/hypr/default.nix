@@ -6,9 +6,6 @@
     plugins = [
       inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
     ];
-    systemd = {
-      enable = true;
-    };
   };
 
   home.packages = with pkgs; [
