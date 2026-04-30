@@ -71,6 +71,7 @@
     enableSSHSupport = true;
   };
   programs.steam.enable = true;
+  programs.hyprland.enable = true;
 
   system.autoUpgrade = {
     enable = true;
