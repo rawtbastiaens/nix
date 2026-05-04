@@ -8,6 +8,7 @@
     ./lazygit.nix
     ./nix-tools.nix
     ./nvim.nix
+    ./pulsemixer.nix
     # ./opencode.nix
     ./productivity.nix
     ./ranger.nix
