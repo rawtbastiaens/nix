@@ -11,6 +11,7 @@
     ./features/desktop/qtile
     ./features/cli
     ./features/desktop/optional/coding.nix
+    ./features/desktop/optional/zotero.nix
     #./features/desktop/optional/discord.nix
     ./features/desktop/optional/gaming.nix
     ./features/desktop/optional/librewolf.nix
