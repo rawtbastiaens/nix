@@ -281,6 +281,7 @@
         ublock-origin
         multi-account-containers
         keepassxc-browser
+        zotero-connector
       ];
 
       settings = {
