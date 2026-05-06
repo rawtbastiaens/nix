@@ -9,7 +9,7 @@
     ./nix-tools.nix
     ./nvim.nix
     ./pulsemixer.nix
-    # ./opencode.nix
+    ./opencode.nix
     ./productivity.nix
     ./ranger.nix
     ./udiskie.nix
