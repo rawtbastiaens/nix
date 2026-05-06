@@ -7,7 +7,6 @@
         autoshare = false;
         autoupdate = true;
       };
-      theme = "tokyonight";
     };
   };
 }
