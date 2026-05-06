@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 {
-  services ={
+  environment.systemPackages = with pkgs; [
+    bluetui
+  ];
+  services = {
     blueman = {
       enable = true;
     };
@@ -10,7 +13,7 @@
     powerOnBoot = true;
     settings = {
       General = {
-          ControllerMode = "dual";
+        ControllerMode = "dual";
       };
       Policy = {
         AutoEnable = true;
