@@ -226,6 +226,14 @@ in
         ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, 1920x1080, 0x0, 1\""
         ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, disable\""
       ];
+      plugin = {
+        hyprexpo = {
+          columns = 3;
+          gap_size = 5;
+          bg_col = "rgb (111111)";
+          workspace_method = "first 1";
+        };
+      };
     };
   };
 
