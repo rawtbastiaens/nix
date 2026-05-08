@@ -127,7 +127,7 @@ in
         sensitivity = -0.5;
       };
 
-      windowrulev2 = [
+      windowrule = [
         "rounding 0, bordersize 0, onworkspace:7"
         "size 50% 50%,class:^(org.keepassxc.KeePassXC)$"
         "center on,class:^(org.keepassxc.KeePassXC)$"
