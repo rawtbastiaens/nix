@@ -140,7 +140,7 @@ in
       ];
 
       bind = [
-        #"$mainMod, TAB, hyprexpo:expo, toggle"
+        "$mainMod, TAB, hyprexpo:expo, toggle"
         "$mainMod SHIFT, F, fullscreen"
         "$mainMod, Q, exec, ${terminal}"
         "$mainMod, F, exec, ${browser}"
