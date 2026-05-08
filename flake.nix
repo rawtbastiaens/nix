@@ -44,6 +44,7 @@
       nixosConfigurations = {
         # Work laptop
         bulbasaur = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/bulbasaur
             sops-nix.nixosModules.sops
