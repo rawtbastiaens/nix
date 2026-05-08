@@ -1,7 +1,8 @@
 {
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ./browsers.nix
     ./xdg.nix
@@ -29,12 +30,11 @@
   ];
 
   xdg.portal = {
-    config.common.default = "*";
+    config.common.default = "hyprland";
     enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-hyprland
-    ];
+    # extraPortals = with pkgs; [
+    #   xdg-desktop-portal-hyprland
+    # ];
   };
 
 }
-
