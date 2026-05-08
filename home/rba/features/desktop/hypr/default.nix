@@ -229,9 +229,9 @@ in
     };
   };
 
-  home.packages = with pkgs; [
-    thunar
-  ];
+  # home.packages = with pkgs; [
+  #   thunar
+  # ];
 
   # Kanshi -> automated display config (like autorandr)
   services.kanshi = {
