@@ -7,6 +7,7 @@ let
   screenshot = ''grim -g "$(slurp)" - | swappy -f -'';
   cliphist_store = "wl-paste --watch cliphist store";
   cliphist_pick = "cliphist list | wofi -S dmenu | cliphist decode | wl-copy";
+  waybar = "systemctl start --user waybar";
 in
 {
   wayland.windowManager.hyprland = {
@@ -30,6 +31,7 @@ in
         "ferdium"
         "keepassxc"
         cliphist_store
+        waybar
       ];
 
       general = {
