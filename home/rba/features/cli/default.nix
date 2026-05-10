@@ -10,6 +10,7 @@
     ./nvim.nix
     ./pulsemixer.nix
     ./opencode.nix
+    ./pandoc.nix
     ./productivity.nix
     ./ranger.nix
     ./udiskie.nix
