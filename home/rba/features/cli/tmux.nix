@@ -2,6 +2,7 @@
 {
   programs.tmux = {
     enable = true;
+    prefix = "C-a";
     clock24 = true;
     historyLimit = 50000;
     baseIndex = 1;
