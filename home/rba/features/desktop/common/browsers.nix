@@ -158,12 +158,12 @@
               {
                 name = "HollandsNieuwe ArgoCD prod";
                 tags = [ "work" ];
-                url = "https://hnprod-argo.ilionx.cloud";
+                url = "https://argo.prod.hollandsnieuwe.nl";
               }
               {
                 name = "HollandsNieuwe ArgoCD test";
                 tags = [ "work" ];
-                url = "https://hntest-argo.ilionx.cloud";
+                url = "https://argo.nonprod.hollandsnieuwe.nl";
               }
               {
                 name = "AlertOps";
