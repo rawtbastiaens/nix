@@ -13,6 +13,7 @@
     ./pandoc.nix
     ./productivity.nix
     ./ranger.nix
+    ./tmux.nix
     ./udiskie.nix
     ./utils.nix
     ./vault.nix
