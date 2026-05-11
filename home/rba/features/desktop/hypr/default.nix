@@ -105,7 +105,7 @@ in
         new_status = "master";
         new_on_top = true;
         orientation = "center";
-        mfact = 0.40;
+        mfact = 0.55;
         smart_resizing = false;
         slave_count_for_center_master = 0;
       };
