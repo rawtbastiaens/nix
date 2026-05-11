@@ -39,3 +39,6 @@ case "$CHOICE" in
     exit 1
     ;;
 esac
+
+# reload config after swap
+hyprctl reload
