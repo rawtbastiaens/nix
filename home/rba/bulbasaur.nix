@@ -8,7 +8,7 @@
   };
   imports = [
     ./features/desktop/common
-    ./features/desktop/qtile
+    # ./features/desktop/qtile
     ./features/cli
     ./features/desktop/optional/coding.nix
     ./features/desktop/optional/zotero.nix
