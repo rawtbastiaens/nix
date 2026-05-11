@@ -8,6 +8,7 @@ let
   cliphist_store = "wl-paste --watch cliphist store";
   cliphist_pick = "cliphist list | wofi -S dmenu | cliphist decode | wl-copy";
   waybar = "systemctl start --user waybar";
+  hypr-monitor-switch = pkgs.callPackage ../../../../../pkgs/hypr-monitor-switch { };
 in
 {
   wayland.windowManager.hyprland = {
@@ -152,6 +153,7 @@ in
         "$mainMod SHIFT, B, exec, pkill -SIGUSR2 waybar"
         "$mainMod SHIFT, P, exec, ${screenshot}"
         "$mainMod SHIFT, C, exec, ${cliphist_pick}"
+        "$mainMod SHIFT, M, exec, hypr-monitor-switch"
         "$mainMod, V, togglefloating,"
         "$mainMod, R, exec, ${menu}"
         "$mainMod, P, pseudo,"
@@ -239,9 +241,9 @@ in
     };
   };
 
-  # home.packages = with pkgs; [
-  #   thunar
-  # ];
+  home.packages = [
+    hypr-monitor-switch
+  ];
 
   # Kanshi -> automated display config (like autorandr)
   services.kanshi = {
