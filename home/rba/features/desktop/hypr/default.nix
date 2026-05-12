@@ -243,6 +243,7 @@ in
 
   home.packages = [
     hypr-monitor-switch
+    pkgs.nwg-displays
   ];
 
   # Kanshi -> automated display config (like autorandr)
