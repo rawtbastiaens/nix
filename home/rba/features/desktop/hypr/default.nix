@@ -119,7 +119,7 @@ in
         kb_layout = "us";
         follow_mouse = 1;
         sensitivity = 0.2;
-        accel_profile = "flat";
+        accel_profile = "adaptive";
 
         touchpad = {
           natural_scroll = false;
