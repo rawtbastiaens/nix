@@ -2,7 +2,7 @@
 let
   terminal = "kitty";
   fileManager = "pcmanfm";
-  menu = "wofi --show drun,run";
+  menu = "rofi --show drun,run";
   browser = "firefox";
   screenshot = ''grim -g "$(slurp)" - | swappy -f -'';
   cliphist_store = "wl-paste --watch cliphist store";
@@ -245,8 +245,12 @@ in
   home.packages = [
     hypr-monitor-switch
     pkgs.nwg-displays
-    pkgs.rofi
   ];
+
+  programs.rofi = {
+    enable = true;
+    terminal = pkgs.kitty;
+  };
 
   # Kanshi -> automated display config (like autorandr)
   services.kanshi = {
