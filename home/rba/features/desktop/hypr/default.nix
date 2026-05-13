@@ -249,7 +249,12 @@ in
 
   programs.rofi = {
     enable = true;
-    terminal = pkgs.kitty;
+    font = "Noto Sans 12";
+    terminal = "\${pkgs.kitty}/bin/kitty";
+    extraConfig = {
+      modi = "drun,run,window,ssh";
+    };
+    theme = "Arc-Dark";
   };
 
   # Kanshi -> automated display config (like autorandr)
