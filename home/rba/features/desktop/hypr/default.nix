@@ -254,7 +254,7 @@ in
     extraConfig = {
       modi = "drun,run,window,ssh,combi";
     };
-    theme = "Arc-Dark";
+    theme = "material";
   };
 
   # Kanshi -> automated display config (like autorandr)
