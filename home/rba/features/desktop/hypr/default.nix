@@ -261,46 +261,46 @@ in
   services.kanshi = {
     enable = true;
     systemdTarget = "hyprland-session.target";
-
-    profiles = {
-      undocked = {
-        outputs = [
+    settings = [
+      {
+        output.criteria = "eDP-1";
+        output.scale = 1;
+      }
+      {
+        profile.name = "undocked";
+        profile.outputs = [
           {
             criteria = "eDP-1";
-            scale = 1.0;
-            status = "enable";
           }
         ];
-      };
-
-      office = {
-        outputs = [
-          {
-            criteria = "HDMI-A-1";
-            position = "0,0";
-            mode = "3440x1440@60Hz";
-          }
+      }
+      {
+        profile.name = "home";
+        profile.outputs = [
           {
             criteria = "eDP-1";
             status = "disable";
           }
-        ];
-      };
-
-      home = {
-        outputs = [
           {
             criteria = "Samsung Electric Company LC34G55T HNBX800474";
-            position = "0,0";
             mode = "3440x1440@60Hz";
           }
+        ];
+      }
+      {
+        profile.name = "office";
+        profile.outputs = [
           {
             criteria = "eDP-1";
             status = "disable";
           }
+          {
+            criteria = "HDMI-A-1";
+            mode = "3440x1440@60Hz";
+          }
         ];
-      };
-    };
+      }
+    ];
   };
 
 }
