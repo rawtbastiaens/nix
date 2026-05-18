@@ -263,10 +263,6 @@ in
     systemdTarget = "hyprland-session.target";
     settings = [
       {
-        output.criteria = "eDP-1";
-        output.scale = 1;
-      }
-      {
         profile.name = "undocked";
         profile.outputs = [
           {
