@@ -273,6 +273,20 @@ in
         ];
       };
 
+      office = {
+        outputs = [
+          {
+            criteria = "HDMI-A-1";
+            position = "0,0";
+            mode = "3440x1440@60Hz";
+          }
+          {
+            criteria = "eDP-1";
+            mode = "disable";
+          }
+        ];
+      };
+
       home = {
         outputs = [
           {
