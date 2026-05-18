@@ -2,7 +2,7 @@
 let
   terminal = "kitty";
   fileManager = "pcmanfm";
-  menu = "rofi --show drun,run";
+  menu = "rofi -show combi";
   browser = "firefox";
   screenshot = ''grim -g "$(slurp)" - | swappy -f -'';
   cliphist_store = "wl-paste --watch cliphist store";
