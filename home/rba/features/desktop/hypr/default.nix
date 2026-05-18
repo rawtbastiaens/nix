@@ -252,7 +252,7 @@ in
     font = "Noto Sans 12";
     terminal = "\${pkgs.kitty}/bin/kitty";
     extraConfig = {
-      modi = "drun,run,window,ssh";
+      modi = "drun,run,window,ssh,combi";
     };
     theme = "Arc-Dark";
   };
