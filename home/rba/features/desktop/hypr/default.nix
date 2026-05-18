@@ -267,6 +267,8 @@ in
         profile.outputs = [
           {
             criteria = "eDP-1";
+            mode = "1920x1080@60Hz";
+            scale = 1;
           }
         ];
       }
