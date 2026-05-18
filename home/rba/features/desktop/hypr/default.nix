@@ -282,7 +282,7 @@ in
           }
           {
             criteria = "eDP-1";
-            mode = "disable";
+            status = "disable";
           }
         ];
       };
@@ -296,7 +296,7 @@ in
           }
           {
             criteria = "eDP-1";
-            mode = "disable";
+            status = "disable";
           }
         ];
       };
