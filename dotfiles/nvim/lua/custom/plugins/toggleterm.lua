@@ -3,6 +3,6 @@ return {
   version = '*',
   config = true,
   keys = {
-    { '<leader>t', 'ToggleTerm<cr>', desc = 'Open terminal' },
+    { '<leader>tt', 'ToggleTerm<cr>', desc = 'Open terminal' },
   },
 }
