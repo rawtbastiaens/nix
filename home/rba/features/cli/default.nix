@@ -18,6 +18,7 @@
     ./utils.nix
     ./vault.nix
     ./x11.nix
+    ./yazi.nix
     ./zsh.nix
   ];
 }
