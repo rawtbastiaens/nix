@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }:
 let
   terminal = "kitty";
-  fileManager = "pcmanfm";
+  fileManager = "kitty -e yazi";
   menu = "rofi -show combi";
   browser = "firefox";
   screenshot = ''grim -g "$(slurp)" - | swappy -f -'';
