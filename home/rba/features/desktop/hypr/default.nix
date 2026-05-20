@@ -269,15 +269,17 @@ in
             status = "disable";
           }
           {
-            criteria = "HDMI-A-1";
-            status = "enable";
-            mode = "2560x1440@60Hz";
-            scale = 1.0;
-          }
-          {
             criteria = "DP-5";
             status = "enable";
             mode = "2560x1440@60Hz";
+            position = "1920,0";
+            scale = 1.0;
+          }
+          {
+            criteria = "HDMI-A-1";
+            status = "enable";
+            mode = "2560x1440@60Hz";
+            position = "4480,0";
             scale = 1.0;
           }
         ];
