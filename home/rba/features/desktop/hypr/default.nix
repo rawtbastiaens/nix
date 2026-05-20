@@ -257,11 +257,31 @@ in
     theme = "material";
   };
 
-  # Kanshi -> automated display config (like autorandr)
   services.kanshi = {
     enable = true;
     systemdTarget = "hyprland-session.target";
     settings = [
+      {
+        profile.name = "two-screen-office";
+        profile.outputs = [
+          {
+            criteria = "eDP-1";
+            status = "disable";
+          }
+          {
+            criteria = "HDMI-A-1";
+            status = "enable";
+            mode = "2560x1440@60Hz";
+            scale = 1.0;
+          }
+          {
+            criteria = "DP-5";
+            status = "enable";
+            mode = "2560x1440@60Hz";
+            scale = 1.0;
+          }
+        ];
+      }
       {
         profile.name = "undocked";
         profile.outputs = [
