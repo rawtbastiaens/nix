@@ -8,6 +8,7 @@ let
   cliphist_store = "wl-paste --watch cliphist store";
   cliphist_pick = "cliphist list | wofi -S dmenu | cliphist decode | wl-copy";
   waybar = "systemctl start --user waybar";
+  snappy-switcher = "snappy-switcher --daemon"
   hypr-monitor-switch = pkgs.callPackage ../../../../../pkgs/hypr-monitor-switch { };
 in
 {
@@ -33,6 +34,7 @@ in
         "keepassxc"
         cliphist_store
         waybar
+        snappy-switcher
       ];
 
       general = {
@@ -144,6 +146,7 @@ in
 
       bind = [
         "$mainMod, TAB, hyprexpo:expo, toggle"
+        "ALT, TAB, exec, snappy-switcher toggle"
         "$mainMod SHIFT, F, fullscreen"
         "$mainMod, Q, exec, ${terminal}"
         "$mainMod, F, exec, ${browser}"
