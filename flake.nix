@@ -6,6 +6,10 @@
   };
 
   inputs = {
+
+    # Snappy switcher: quick window switcher for hyprland
+    snappy-switcher.url = "github:OpalAayan/snappy-switcher";
+
     # Nixpkgs
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
