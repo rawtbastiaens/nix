@@ -243,6 +243,7 @@ in
   };
 
   home.packages = [
+    inputs.snappy-switcher.packages.${pkgs.system}.default
     hypr-monitor-switch
     pkgs.nwg-displays
   ];
